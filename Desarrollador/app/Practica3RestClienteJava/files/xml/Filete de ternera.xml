@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Receta dificultad="Facil">
+    <nombre>Filete de ternera</nombre>
+    <ingrediente>
+        <ingrediente>Carne de ternera</ingrediente>
+        <ingrediente>Aceite</ingrediente>
+        <ingrediente>Sal</ingrediente>
+    </ingrediente>
+    <precio>1.0</precio>
+</Receta>

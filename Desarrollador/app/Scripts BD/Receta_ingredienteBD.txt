@@ -1,0 +1,7 @@
+create table receta_ingrediente(
+	receta_id integer not null,
+	ingrediente_id integer not null,
+	foreign key (receta_id) references receta (receta_id),
+	foreign key (ingrediente_id) references ingrediente (ingrediente_id),
+	primary key (receta_id, ingrediente_id)
+);
