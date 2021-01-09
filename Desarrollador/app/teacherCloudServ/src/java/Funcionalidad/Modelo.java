@@ -8,6 +8,7 @@ package Funcionalidad;
 import Funcionalidad.BBDD;
 import java.security.NoSuchAlgorithmException;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import javax.naming.NamingException;
 
 /**
@@ -17,6 +18,9 @@ import javax.naming.NamingException;
 public class Modelo {
     BBDD bbdd = new BBDD();
     
+    public ArrayList<String>  obtenerEmail() throws SQLException, ClassNotFoundException, NamingException, NoSuchAlgorithmException {
+       return bbdd.obtenerEmailUsuario();
+    }
     public boolean autenticar(String email, String pass) throws SQLException, ClassNotFoundException, NamingException, NoSuchAlgorithmException {
        return bbdd.autenticar(email, pass);
     }

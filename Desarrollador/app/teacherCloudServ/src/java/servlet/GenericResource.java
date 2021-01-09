@@ -5,6 +5,11 @@
  */
 package servlet;
 
+import Funcionalidad.Modelo;
+import java.security.NoSuchAlgorithmException;
+import java.sql.SQLException;
+import java.util.ArrayList;
+import javax.naming.NamingException;
 import javax.ws.rs.core.Context;
 import javax.ws.rs.core.UriInfo;
 import javax.ws.rs.PathParam;
@@ -22,7 +27,7 @@ import javax.ws.rs.core.MediaType;
  */
 @Path("generic")
 public class GenericResource {
-
+Modelo modelo= new Modelo();
     @Context
     private UriInfo context;
 
@@ -39,10 +44,11 @@ public class GenericResource {
     @GET
      @Path("hola")
       @Produces(MediaType.TEXT_PLAIN)
-    public String getXml() {
+    public String getXml() throws SQLException, ClassNotFoundException, NamingException, NoSuchAlgorithmException {
         //TODO return proper representation object
-        
-       return "hola mundo";
+         ArrayList<String> emailUser = new ArrayList();
+        emailUser= modelo.obtenerEmail();
+       return emailUser.get(0);
     }
 
     /**
