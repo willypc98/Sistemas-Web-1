@@ -25,7 +25,7 @@ private static Connection con;
     private static final String driver="com.mysql.jdbc.Driver";
     private static final String user="root";
     private static final String pass="1234a";
-    private static final String url="jdbc:mysql://localhost:3306/usuario";
+    private static final String url="jdbc:mysql://localhost:3306/teacherCloud";
   
 
     
@@ -69,7 +69,7 @@ private static Connection con;
      ArrayList<String> emailUser = new ArrayList();
         try {
             if(conector()==true){
-                String queryBBDD = "select * from usuario";
+                String queryBBDD = "select * from TCusuario";
                 int i=0;
                 try {
                     rS = createStatement.executeQuery(queryBBDD);
@@ -108,7 +108,45 @@ private static Connection con;
         return emailUser;
      }
     boolean autenticar(String email, String pass) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+          try {
+            if(conector()==true){
+                String queryBBDD = "select "+pass+" from usuario where email like '"+email+" '";
+                int i=0;
+                try {
+                    rS = createStatement.executeQuery(queryBBDD);
+                } catch (SQLException ex) {
+                    Logger.getLogger(BBDD.class.getName()).log(Level.SEVERE, null, ex);
+                }
+                
+                try {
+                    while (rS.next()) {
+//              contenido.add(rS.getString("nombre_usuario"));
+//              contenido.add(rS.getString("password_usuario"));
+                        
+                        //emailUser.add(rS.getString("email"));
+                        
+                        i++;
+                    }
+                } catch (SQLException ex) {
+                    Logger.getLogger(BBDD.class.getName()).log(Level.SEVERE, null, ex);
+                }
+                try {
+                    i=0;
+                    con.close();
+                } catch (SQLException ex) {
+                    Logger.getLogger(BBDD.class.getName()).log(Level.SEVERE, null, ex);
+                }
+            
+            }
+            else{
+                return true;
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(BBDD.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(BBDD.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return true;
     }
 
     void registrar(String nombre, String email, String pass, String modo) {
