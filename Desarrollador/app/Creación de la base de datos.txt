@@ -35,7 +35,21 @@ clase_identificador int (10) not null
 
 /*CHAT*/
 
+create table TCchat(
+clase_identificador int (10) not null,
+usuario_modo varchar (20) not null,
+usuario_email varchar (20) not null
+);
 
+/*PETICIONES*/
+
+create table TCpeticion(
+peticion_identificador int (10) auto_increment not null,
+peticion_estado varchar (20) not null,
+usuario_email varchar (20) not null,
+clase_identificador int (10) not null,
+primary key(peticion_identificador)
+);
 
 /*INCIDENCIAS*/
 

@@ -18,6 +18,7 @@ INSERT INTO TCclaseUsuario (usuario_modo,usuario_email,clase_identificador) VALU
 
 
 
-/*USUARIO*/
+/*PETICION*/
+INSERT INTO TCpeticion(peticion_estado,usuario_email,clase_identificador) VALUES ('en proceso','c@c.com','1');
 
 /*USUARIO*/
