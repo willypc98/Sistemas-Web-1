@@ -1,0 +1,1 @@
+INSERT INTO TCclase (clase_identificador,clase_nombre,clase_descripcion,clase_calificacion,clase_alumno_email,clase_alumno_modo,clase_profesor_email,clase_profesor_modo) VALUES (1,'matemáticas','números',3,'alumno', 'a@a.com','profe', 'b@b.com');

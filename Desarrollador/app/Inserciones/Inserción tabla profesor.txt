@@ -1,0 +1,1 @@
+INSERT INTO TCprofesor (profesor_modo,profesor_email,clase_identificador) VALUES ('profe', 'b@b.com',);
