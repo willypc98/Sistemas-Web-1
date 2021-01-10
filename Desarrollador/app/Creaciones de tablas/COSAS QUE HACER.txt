@@ -1,0 +1,4 @@
+Se tiene que hacer una tabla que sea peticiones, esta tabla corresponde a los alumnos que quieran inscribirse en una clase 
+que todavia no hayan sido aceptados ni rechazados,
+por tanto, la tabla tiene que tener el email del alumno y el identificador de la clase.
+Debe tener un campo tambien para decir el estado de la petición, si aceptada o rechazada o en curso.
