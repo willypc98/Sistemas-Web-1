@@ -1,1 +1,0 @@
-insert into TCusuario value('alum', 'p@p.com', 'p', 'p');
