@@ -1,0 +1,46 @@
+drop database if exists teacherCloud;
+
+create database teacherCloud;
+
+use teacherCloud;
+
+
+/*USUARIO*/
+
+create table TCusuario(
+usuario_modo varchar (20) not null,
+usuario_email varchar (20) not null,
+usuario_nombre varchar (20) not null,
+usuario_pass varchar (20) not null,
+usuario_monedero int (100),
+primary key(usuario_email)
+ );
+
+/*CLASE*/
+create table TCclase(
+clase_identificador int (10) auto_increment not null,
+clase_nombre varchar (20) not null,
+clase_descripcion varchar (50),
+clase_calificacion int (1),
+primary key(clase_identificador)
+);
+
+/*CLASEUSUARIO*/
+
+create table TCclaseUsuario(
+usuario_modo varchar (20) not null,
+usuario_email varchar (20) not null,
+clase_identificador int (10) not null
+);
+
+/*CHAT*/
+
+
+
+/*INCIDENCIAS*/
+
+create table TCincidencia(
+incidencias_identificador integer primary key auto_increment not null,
+incidencias_descripcion varchar (50) not null
+);
+

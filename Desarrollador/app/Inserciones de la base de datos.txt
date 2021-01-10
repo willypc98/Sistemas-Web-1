@@ -1,0 +1,23 @@
+/*USUARIO*/
+
+INSERT INTO TCusuario (usuario_modo,usuario_email,usuario_nombre,usuario_pass,usuario_monedero) VALUES ('alumno', 'a@a.com','a','a',5);
+INSERT INTO TCusuario (usuario_modo,usuario_email,usuario_nombre,usuario_pass,usuario_monedero) VALUES ('profesor', 'b@b.com','b','b',5);
+INSERT INTO TCusuario (usuario_modo,usuario_email,usuario_nombre,usuario_pass,usuario_monedero) VALUES ('alumno', 'c@c.com','c','c',10);
+INSERT INTO TCusuario (usuario_modo,usuario_email,usuario_nombre,usuario_pass,usuario_monedero) VALUES ('alumno', 'd@d.com','d','d',7);
+
+/*CLASE*/
+
+INSERT INTO TCclase (clase_nombre,clase_descripcion,clase_calificacion) VALUES ('matematicas','son numeros', 2);
+INSERT INTO TCclase (clase_nombre,clase_descripcion,clase_calificacion) VALUES ('literatura','son letras', 1);
+
+/*CLASEUSUARIO*/
+
+INSERT INTO TCclaseUsuario (usuario_modo,usuario_email,clase_identificador) VALUES ('alumno','a@a.com', 1);
+INSERT INTO TCclaseUsuario (usuario_modo,usuario_email,clase_identificador) VALUES ('profesor','b@b.com', 1);
+INSERT INTO TCclaseUsuario (usuario_modo,usuario_email,clase_identificador) VALUES ('alumno','c@c.com', 2);
+
+
+
+/*USUARIO*/
+
+/*USUARIO*/

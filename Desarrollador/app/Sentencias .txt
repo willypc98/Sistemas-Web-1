@@ -1,0 +1,3 @@
+/*BUSCAR EL EMAIL DEL USUARIO Y EL NOMBRE DE LA CLASE A LA QUE PERTENECE*/
+
+select TCusuario.usuario_email AS email,TCusuario.usuario_modo AS alumnoOProfesor,clase_nombre from TCusuario,TCclaseUsuario,TCclase where TCusuario.usuario_email = TCclaseUsuario.usuario_email AND TCclaseUsuario.clase_identificador = TCclase.clase_identificador;
