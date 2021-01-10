@@ -108,10 +108,14 @@ private static Connection con;
         return emailUser;
      }
     boolean autenticar(String email, String pass) {
+        //esta variable es la encargada de almacenar temporalmente la pass para poder compararla
+        String passAux="";
+        
+        //var auxiliar que te devuelve true si se encuentra la coincidencia de pas intro con la encontrada tras la sentencia select
+        boolean valor= false;
           try {
             if(conector()==true){
-                String queryBBDD = "select "+pass+" from usuario where email like '"+email+" '";
-                int i=0;
+                String queryBBDD = "select pass from TCusuario where email like '"+email+"'";
                 try {
                     rS = createStatement.executeQuery(queryBBDD);
                 } catch (SQLException ex) {
@@ -119,19 +123,22 @@ private static Connection con;
                 }
                 
                 try {
-                    while (rS.next()) {
-//              contenido.add(rS.getString("nombre_usuario"));
-//              contenido.add(rS.getString("password_usuario"));
-                        
-                        //emailUser.add(rS.getString("email"));
-                        
-                        i++;
+                    while (rS.next()) {                     
+                       passAux=rS.getString("pass");                        
                     }
+                    
+                    System.out.println(pass);
+                    System.out.println(passAux);
+                    if(passAux.equals(pass)){
+                        valor=true;
+                    }
+                    
+                    
                 } catch (SQLException ex) {
                     Logger.getLogger(BBDD.class.getName()).log(Level.SEVERE, null, ex);
                 }
                 try {
-                    i=0;
+                   
                     con.close();
                 } catch (SQLException ex) {
                     Logger.getLogger(BBDD.class.getName()).log(Level.SEVERE, null, ex);
@@ -139,14 +146,14 @@ private static Connection con;
             
             }
             else{
-                return true;
+                return false;
             }
         } catch (SQLException ex) {
             Logger.getLogger(BBDD.class.getName()).log(Level.SEVERE, null, ex);
         } catch (ClassNotFoundException ex) {
             Logger.getLogger(BBDD.class.getName()).log(Level.SEVERE, null, ex);
         }
-        return true;
+        return valor;
     }
 
     void registrar(String nombre, String email, String pass, String modo) {

@@ -50,6 +50,18 @@ Modelo modelo= new Modelo();
         emailUser= modelo.obtenerEmail();
        return emailUser.get(0);
     }
+    //hace falta ponerlo en post pero ya responde
+        @GET
+     @Path("Login")
+      @Produces(MediaType.TEXT_PLAIN)
+    public String autenticar() throws SQLException, ClassNotFoundException, NamingException, NoSuchAlgorithmException {
+        String auxTextoRespuesta="error, email o pass erroneas";
+      
+        if (modelo.autenticar("p@p.com", "p")==true){
+            auxTextoRespuesta="todo correcto";
+        }
+       return auxTextoRespuesta;
+    }
 
     /**
      * PUT method for updating or creating an instance of GenericResource
