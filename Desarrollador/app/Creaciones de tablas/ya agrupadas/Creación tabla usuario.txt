@@ -1,0 +1,13 @@
+drop database if exists teacherCloud;
+
+create database teacherCloud;
+
+use teacherCloud;
+
+create table TCusuario(
+usuario_modo varchar (20) not null,
+usuario_email varchar (20) not null,
+usuario_nombre varchar (20) not null,
+usuario_pass varchar (20) not null,
+primary key(usuario_modo,usuario_email)
+ );
