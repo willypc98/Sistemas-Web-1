@@ -77,6 +77,16 @@ Modelo modelo= new Modelo();
     
     //Alumno
     
+            @GET
+     @Path("Alumno/BuscarClase")
+      @Produces(MediaType.TEXT_PLAIN)
+    public String buscarClase() throws SQLException, ClassNotFoundException, NamingException, NoSuchAlgorithmException {
+      ArrayList<String> clase = new ArrayList();
+       clase=modelo.buscarClase("matematicas");
+        
+       return "la clase es "+clase.get(0)+" la descripcion es "+ clase.get(1);
+    }
+
      //falta ponerlo a put y listo
         @GET
      @Path("Alumno/Incidencia")

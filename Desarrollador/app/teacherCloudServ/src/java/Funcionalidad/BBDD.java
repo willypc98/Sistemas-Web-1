@@ -162,9 +162,47 @@ private static Connection con;
            con.close();
            }
           }
+    
+    // busca la clase por el nombre proporcionado y devuelve todo la informacion de esta en el arrayList clase
+    protected ArrayList<String> buscarClase(String nombreClase) {
+      ArrayList<String> clase = new ArrayList();
+        try {
+            if(conector()==true){
+                String queryBBDD = "select * from TCclase where clase_nombre like '"+nombreClase+"'";
+              
+                try {
+                    rS = createStatement.executeQuery(queryBBDD);
+                } catch (SQLException ex) {
+                    Logger.getLogger(BBDD.class.getName()).log(Level.SEVERE, null, ex);
+                }
+                
+                try {
+                    while (rS.next()) {                     
+                        clase.add(rS.getString("clase_nombre"));
+                        clase.add(rS.getString("clase_descripcion"));
+                        clase.add(rS.getString("clase_calificacion"));
 
-    protected void buscarClase(String nombreClase) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+                    }
+                } catch (SQLException ex) {
+                    Logger.getLogger(BBDD.class.getName()).log(Level.SEVERE, null, ex);
+                }
+                try {
+
+                    con.close();
+                } catch (SQLException ex) {
+                    Logger.getLogger(BBDD.class.getName()).log(Level.SEVERE, null, ex);
+                }
+            
+            }
+            else{
+                return clase;
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(BBDD.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(BBDD.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return clase;
     }
     
      protected void reportar(String incidencias_descripcion  ) throws SQLException, ClassNotFoundException {

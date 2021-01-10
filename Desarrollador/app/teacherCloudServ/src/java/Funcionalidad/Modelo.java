@@ -40,8 +40,8 @@ public class Modelo {
      
      //ALUMNO
      
-    public void buscarClase(String nombreClase) throws SQLException, ClassNotFoundException, NamingException, NoSuchAlgorithmException {
-         bbdd.buscarClase(nombreClase);
+    public ArrayList<String> buscarClase(String nombreClase) throws SQLException, ClassNotFoundException, NamingException, NoSuchAlgorithmException {
+         return bbdd.buscarClase(nombreClase);
     }
       public void pedirInscribirse(String incidencias_descripcion) throws SQLException, ClassNotFoundException, NamingException, NoSuchAlgorithmException {
          bbdd.reportar( incidencias_descripcion);
