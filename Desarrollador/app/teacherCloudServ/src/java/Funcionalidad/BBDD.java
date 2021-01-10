@@ -156,15 +156,27 @@ private static Connection con;
     }
 
     protected void registrar(String modo,String email,String nombre,  String pass ) throws SQLException, ClassNotFoundException {
-         
-       
-         
             if(conector()==true){
                 
             createStatement.executeUpdate("INSERT INTO TCusuario (usuario_modo, email, nombre_usuario, pass) VALUES ('" + modo + "', '" + email + "', '" + nombre + "', '" + pass + "')");
            con.close();
            }
           }
+
+    protected void buscarClase(String nombreClase) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
     
+     protected void reportar(String incidencias_descripcion ) throws SQLException, ClassNotFoundException {
+         if(conector()==true){
+                
+            createStatement.executeUpdate("INSERT INTO TCincidencias (incidencias_descripcion) VALUES ('" + incidencias_descripcion  + "');");
+           con.close();
+           }
+    }
+    
+      protected void mostrarChatsAlumno(String correoAlumno) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
        
 }

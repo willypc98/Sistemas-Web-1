@@ -64,12 +64,26 @@ Modelo modelo= new Modelo();
        return auxTextoRespuesta;
     }
     
+    //falta ponerlo a put y listo
         @GET
      @Path("Registrarse")
       @Produces(MediaType.TEXT_PLAIN)
     public String registrase() throws SQLException, ClassNotFoundException, NamingException, NoSuchAlgorithmException {
      
        modelo.registrar("prof", "gaga", "q", "q");
+        
+       return "hola buenas";
+    }
+    
+    //Alumno
+    
+     //falta ponerlo a put y listo
+        @GET
+     @Path("Alumno/Incidencia")
+      @Produces(MediaType.TEXT_PLAIN)
+    public String incidencia() throws SQLException, ClassNotFoundException, NamingException, NoSuchAlgorithmException {
+     
+       modelo.reportar("devolvedme el dinero hijos de fruta");
         
        return "hola buenas";
     }

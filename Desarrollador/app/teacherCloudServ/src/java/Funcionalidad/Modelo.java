@@ -26,8 +26,16 @@ public class Modelo {
     }
     //modo se refiere a si es tutor o alumno
      public void registrar(String modo,String email,String nombre,  String pass) throws SQLException, ClassNotFoundException, NamingException, NoSuchAlgorithmException {
-        
          bbdd.registrar( modo, email, nombre, pass);
     }
-    
+     
+      public void buscarClase(String nombreClase) throws SQLException, ClassNotFoundException, NamingException, NoSuchAlgorithmException {
+         bbdd.buscarClase(nombreClase);
+    }
+    public void mostrarChatsAlumno(String correoAlumno){
+        bbdd.mostrarChatsAlumno(correoAlumno);
+    }
+     public void reportar(String incidencias_descripcion) throws SQLException, ClassNotFoundException, NamingException, NoSuchAlgorithmException {
+         bbdd.reportar( incidencias_descripcion);
+    }
 }
