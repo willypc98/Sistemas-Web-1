@@ -47,9 +47,7 @@ public class Modelo {
          bbdd.reportar( incidencias_descripcion);
     }
     
-    public void mostrarChatsAlumno(String correoAlumno){
-        bbdd.mostrarChatsAlumno(correoAlumno);
-    }
+
      public void reportar(String incidencias_descripcion) throws SQLException, ClassNotFoundException, NamingException, NoSuchAlgorithmException {
          bbdd.reportar( incidencias_descripcion);
     }
@@ -61,9 +59,7 @@ public class Modelo {
      public void crearClase(String nombreClase) throws SQLException, ClassNotFoundException, NamingException, NoSuchAlgorithmException {
          bbdd.crearClase(nombreClase);
     }
-    public void mostrarChatsProfesor(String correoProfesor){
-        bbdd.mostrarChatsProfesor(correoProfesor);
-    }
+    
     public void mostrarCalificaciones(){
         bbdd.mostrarCalificaciones();
     }
