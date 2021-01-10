@@ -115,7 +115,7 @@ private static Connection con;
         boolean valor= false;
           try {
             if(conector()==true){
-                String queryBBDD = "select pass from TCusuario where email like '"+email+"'";
+                String queryBBDD = "select usuario_pass from TCusuario where usuario_email like '"+email+"'";
                 try {
                     rS = createStatement.executeQuery(queryBBDD);
                 } catch (SQLException ex) {
@@ -124,7 +124,7 @@ private static Connection con;
                 
                 try {
                     while (rS.next()) {                     
-                       passAux=rS.getString("pass");                        
+                       passAux=rS.getString("usuario_pass");                        
                     }
                     
                     
@@ -158,7 +158,7 @@ private static Connection con;
     protected void registrar(String modo,String email,String nombre,  String pass ) throws SQLException, ClassNotFoundException {
             if(conector()==true){
                 
-            createStatement.executeUpdate("INSERT INTO TCusuario (usuario_modo, email, nombre_usuario, pass) VALUES ('" + modo + "', '" + email + "', '" + nombre + "', '" + pass + "')");
+            createStatement.executeUpdate("INSERT INTO TCusuario (usuario_modo, usuario_email, usuario_nombre, usuario_pass) VALUES ('" + modo + "', '" + email + "', '" + nombre + "', '" + pass + "')");
            con.close();
            }
           }
@@ -167,10 +167,10 @@ private static Connection con;
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     
-     protected void reportar(String incidencias_descripcion ) throws SQLException, ClassNotFoundException {
+     protected void reportar(String incidencias_descripcion  ) throws SQLException, ClassNotFoundException {
          if(conector()==true){
                 
-            createStatement.executeUpdate("INSERT INTO TCincidencias (incidencias_descripcion) VALUES ('" + incidencias_descripcion  + "');");
+            createStatement.executeUpdate("INSERT INTO TCincidencia (incidencias_descripcion) VALUES ('" + incidencias_descripcion  + "');");
            con.close();
            }
     }

@@ -58,7 +58,7 @@ Modelo modelo= new Modelo();
         //cuando este en el cliente hay que quitarlo y solo dejar en boolean
         String auxTextoRespuesta="error, email o pass erroneas";
       
-        if (modelo.autenticar("p@p.com", "p")==true){
+        if (modelo.autenticar("a@a.com", "a")==true){
             auxTextoRespuesta="todo correcto";
         }
        return auxTextoRespuesta;
@@ -70,7 +70,7 @@ Modelo modelo= new Modelo();
       @Produces(MediaType.TEXT_PLAIN)
     public String registrase() throws SQLException, ClassNotFoundException, NamingException, NoSuchAlgorithmException {
      
-       modelo.registrar("prof", "gaga", "q", "q");
+       modelo.registrar("profe", "gaga", "q", "q");
         
        return "hola buenas";
     }
