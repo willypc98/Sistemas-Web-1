@@ -1,8 +1,0 @@
-create table TCalumno(
-alumno_modo varchar (20) not null,
-alumno_email varchar (20) not null,
-clase_identificador int (10),
-alumno_monedero int (100),
-primary key(alumno_modo,alumno_email),
-foreign key (alumno_modo,alumno_email) REFERENCES TCusuario(usuario_modo,usuario_email)
-);

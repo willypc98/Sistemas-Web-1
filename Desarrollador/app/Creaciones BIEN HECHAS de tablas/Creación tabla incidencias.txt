@@ -1,4 +1,0 @@
-create table TCincidencia(
-incidencias_identificador integer primary key auto_increment not null,
-incidencias_descripcion varchar (50) not null
-);
