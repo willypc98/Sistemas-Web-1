@@ -25,8 +25,9 @@ public class Modelo {
        return bbdd.autenticar(email, pass);
     }
     //modo se refiere a si es tutor o alumno
-     public void registrar(String nombre, String email, String pass, String modo) throws SQLException, ClassNotFoundException, NamingException, NoSuchAlgorithmException {
-        bbdd.registrar(nombre, email, pass, modo);
+     public void registrar(String modo,String email,String nombre,  String pass) throws SQLException, ClassNotFoundException, NamingException, NoSuchAlgorithmException {
+        
+         bbdd.registrar( modo, email, nombre, pass);
     }
     
 }

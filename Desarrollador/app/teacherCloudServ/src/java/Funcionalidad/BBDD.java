@@ -107,7 +107,7 @@ private static Connection con;
         }
         return emailUser;
      }
-    boolean autenticar(String email, String pass) {
+   protected boolean autenticar(String email, String pass) {
         //esta variable es la encargada de almacenar temporalmente la pass para poder compararla
         String passAux="";
         
@@ -127,8 +127,7 @@ private static Connection con;
                        passAux=rS.getString("pass");                        
                     }
                     
-                    System.out.println(pass);
-                    System.out.println(passAux);
+                    
                     if(passAux.equals(pass)){
                         valor=true;
                     }
@@ -156,8 +155,16 @@ private static Connection con;
         return valor;
     }
 
-    void registrar(String nombre, String email, String pass, String modo) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+    protected void registrar(String modo,String email,String nombre,  String pass ) throws SQLException, ClassNotFoundException {
+         
+       
+         
+            if(conector()==true){
+                
+            createStatement.executeUpdate("INSERT INTO TCusuario (usuario_modo, email, nombre_usuario, pass) VALUES ('" + modo + "', '" + email + "', '" + nombre + "', '" + pass + "')");
+           con.close();
+           }
+          }
     
+       
 }

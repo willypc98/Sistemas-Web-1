@@ -25,7 +25,7 @@ import javax.ws.rs.core.MediaType;
  *
  * @author david
  */
-@Path("generic")
+@Path("Usuario")
 public class GenericResource {
 Modelo modelo= new Modelo();
     @Context
@@ -55,12 +55,23 @@ Modelo modelo= new Modelo();
      @Path("Login")
       @Produces(MediaType.TEXT_PLAIN)
     public String autenticar() throws SQLException, ClassNotFoundException, NamingException, NoSuchAlgorithmException {
+        //cuando este en el cliente hay que quitarlo y solo dejar en boolean
         String auxTextoRespuesta="error, email o pass erroneas";
       
         if (modelo.autenticar("p@p.com", "p")==true){
             auxTextoRespuesta="todo correcto";
         }
        return auxTextoRespuesta;
+    }
+    
+        @GET
+     @Path("Registrarse")
+      @Produces(MediaType.TEXT_PLAIN)
+    public String registrase() throws SQLException, ClassNotFoundException, NamingException, NoSuchAlgorithmException {
+     
+       modelo.registrar("prof", "gaga", "q", "q");
+        
+       return "hola buenas";
     }
 
     /**
