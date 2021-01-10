@@ -241,12 +241,115 @@ private static Connection con;
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
-    void pagar() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    protected boolean pagar(String nombreConsumidor, String nombreProductor) {
+        
+        //variable de control para saber si se ha relizado el pago
+        boolean valor=false;
+        System.out.println(verDinero(nombreConsumidor));
+        System.out.println(verDinero(nombreProductor));
+       if(Integer.parseInt(verDinero(nombreConsumidor))>=1) {
+           valor=true;
+           modificarDinero(nombreConsumidor,verDinero(nombreConsumidor),"resta");
+           modificarDinero(nombreProductor,verDinero(nombreProductor),"suma");
+          
+           
+       }
+           
+       
+      return valor;
     }
 
     void mostarClase(String nombreClase) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
+     
+    
+    
+    
+    //extras
+    
+    
+    //te ve el dinero del usuario con un nombre determinado
+    protected String verDinero(String nombre) {
+        //esta variable es la encargada de almacenar temporalmente el dinero
+        String dinero="-1000";
+        
        
+          try {
+            if(conector()==true){
+                String queryBBDD = "select usuario_monedero  from TCusuario where usuario_nombre like '"+nombre+"'";
+                try {
+                    rS = createStatement.executeQuery(queryBBDD);
+                } catch (SQLException ex) {
+                    Logger.getLogger(BBDD.class.getName()).log(Level.SEVERE, null, ex);
+                }
+                
+                try {
+                    while (rS.next()) {                     
+                       dinero=rS.getString("usuario_monedero");                        
+                    }
+                       
+                } catch (SQLException ex) {
+                    Logger.getLogger(BBDD.class.getName()).log(Level.SEVERE, null, ex);
+                }
+                try {
+                   
+                    con.close();
+                } catch (SQLException ex) {
+                    Logger.getLogger(BBDD.class.getName()).log(Level.SEVERE, null, ex);
+                }
+            
+            }
+            else{
+                return dinero;
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(BBDD.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(BBDD.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return dinero;
+    }
+    
+     protected String modificarDinero(String nombre, String dinero, String tipo) {
+        //esta variable es la encargada de almacenar temporalmente el dinero
+        
+        int dineroAux=0;
+        
+        if(tipo.equals("suma")){
+        dineroAux =(Integer.parseInt(dinero)+1);
+        }else{
+         dineroAux =(Integer.parseInt(dinero)-1);
+        }
+              
+       
+          try {
+            if(conector()==true){
+                String queryBBDD = "update TCusuario set usuario_monedero="+dineroAux+"  where usuario_nombre like '"+nombre+"';";
+                
+                try {
+                   createStatement.executeUpdate(queryBBDD);
+                } catch (SQLException ex) {
+                    Logger.getLogger(BBDD.class.getName()).log(Level.SEVERE, null, ex);
+                }
+                
+                try {
+                   
+                    con.close();
+                } catch (SQLException ex) {
+                    Logger.getLogger(BBDD.class.getName()).log(Level.SEVERE, null, ex);
+                }
+            
+            }
+            else{
+                return dinero;
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(BBDD.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(BBDD.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return dinero;
+    }
+    
 }

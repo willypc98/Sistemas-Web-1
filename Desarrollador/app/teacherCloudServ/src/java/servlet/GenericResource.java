@@ -97,6 +97,22 @@ Modelo modelo= new Modelo();
         
        return "hola buenas, no nos importa nah";
     }
+         //falta ponerlo a put y listo
+        @GET
+     @Path("Alumno/Pago")
+      @Produces(MediaType.TEXT_PLAIN)
+    public String pago() throws SQLException, ClassNotFoundException, NamingException, NoSuchAlgorithmException {
+     
+      boolean valor=modelo.pagarClase("d", "b");
+      
+      if( valor==false){
+          return "no tiene dinero";
+      }else{
+         return "ha sido timado";
+      }
+       
+    }
+
 
     /**
      * PUT method for updating or creating an instance of GenericResource

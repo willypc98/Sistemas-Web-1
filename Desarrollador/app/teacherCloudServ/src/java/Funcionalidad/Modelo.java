@@ -53,8 +53,8 @@ public class Modelo {
      public void reportar(String incidencias_descripcion) throws SQLException, ClassNotFoundException, NamingException, NoSuchAlgorithmException {
          bbdd.reportar( incidencias_descripcion);
     }
-      public void pagarClase() throws SQLException, ClassNotFoundException, NamingException, NoSuchAlgorithmException {
-         bbdd.pagar();
+      public boolean pagarClase(String nombreConsumidor, String nombreProductor) throws SQLException, ClassNotFoundException, NamingException, NoSuchAlgorithmException {
+         return bbdd.pagar(nombreConsumidor,nombreProductor);
     }
      //PROFESOR
      
