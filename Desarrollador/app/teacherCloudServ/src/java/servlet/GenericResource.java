@@ -112,7 +112,15 @@ Modelo modelo= new Modelo();
       }
        
     }
-
+         @GET
+     @Path("Alumno/BuscarClasePublicada")
+      @Produces(MediaType.TEXT_PLAIN)
+    public String nombreClasePublicada() throws SQLException, ClassNotFoundException, NamingException, NoSuchAlgorithmException {
+      ArrayList<String> clase = new ArrayList();
+       clase=modelo.nombreClasePublicada();
+        
+       return "la clase es "+clase.get(1);
+    }
 
     /**
      * PUT method for updating or creating an instance of GenericResource

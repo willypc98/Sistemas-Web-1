@@ -259,10 +259,7 @@ private static Connection con;
       return valor;
     }
 
-    void mostarClase(String nombreClase) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-     
+
     
     
     
@@ -352,4 +349,44 @@ private static Connection con;
         return dinero;
     }
     
+     
+     protected ArrayList<String> nombreClasePublicada() {
+      ArrayList<String> clase = new ArrayList();
+        try {
+            if(conector()==true){
+                String queryBBDD = "select clase_nombre from TCclase;";
+              
+                try {
+                    rS = createStatement.executeQuery(queryBBDD);
+                } catch (SQLException ex) {
+                    Logger.getLogger(BBDD.class.getName()).log(Level.SEVERE, null, ex);
+                }
+                
+                try {
+                    while (rS.next()) {                     
+                        clase.add(rS.getString("clase_nombre"));
+                        
+
+                    }
+                } catch (SQLException ex) {
+                    Logger.getLogger(BBDD.class.getName()).log(Level.SEVERE, null, ex);
+                }
+                try {
+
+                    con.close();
+                } catch (SQLException ex) {
+                    Logger.getLogger(BBDD.class.getName()).log(Level.SEVERE, null, ex);
+                }
+            
+            }
+            else{
+                return clase;
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(BBDD.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(BBDD.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return clase;
+    }
 }

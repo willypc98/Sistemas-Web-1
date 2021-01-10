@@ -78,8 +78,8 @@ public class Modelo {
     }
     
        //extras pero necesarias
-         public void mostarClase(String nombreClase){
-        bbdd.mostarClase(nombreClase);
+         public ArrayList<String> nombreClasePublicada(){
+        return bbdd.nombreClasePublicada();
     }
      
 }
