@@ -3,20 +3,20 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Servlets;
+package Cliente;
 
 /**
  * Jersey REST client generated for REST resource:GenericResource [Usuario]<br>
  * USAGE:
  * <pre>
- *        ServletClient client = new ServletClient();
- *        Object response = client.XXX(...);
- *        // do whatever with response
- *        client.close();
- * </pre>
+        Cliente client = new Cliente();
+        Object response = client.XXX(...);
+        // do whatever with response
+        client.close();
+ </pre>
  *
  * @author david
  */
-public class ServletClient {
+public class Cliente {
     
 }
