@@ -156,10 +156,10 @@ private static Connection con;
         return valor;
     }
 
-    protected void registrar(String modo,String email,String nombre,  String pass ) throws SQLException, ClassNotFoundException {
+    protected void registrar(String modo,String email,String nombre,  String pass, int monedero ) throws SQLException, ClassNotFoundException {
             if(conector()==true){
                 
-            createStatement.executeUpdate("INSERT INTO TCusuario (usuario_modo, usuario_email, usuario_nombre, usuario_pass) VALUES ('" + modo + "', '" + email + "', '" + nombre + "', '" + pass + "')");
+            createStatement.executeUpdate("INSERT INTO TCusuario (usuario_modo, usuario_email, usuario_nombre, usuario_pass, usuario_monedero) VALUES ('" + modo + "', '" + email + "', '" + nombre + "', '" + pass +"', '"+monedero + "')");
            con.close();
            }
           }

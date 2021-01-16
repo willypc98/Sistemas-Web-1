@@ -49,27 +49,27 @@ Modelo modelo= new Modelo();
 
 
     //hace falta ponerlo en post pero ya responde
-        @GET
+     @POST
      @Path("Login")
       @Produces(MediaType.TEXT_PLAIN)
-    public String autenticar() throws SQLException, ClassNotFoundException, NamingException, NoSuchAlgorithmException {
+    public String autenticar(@FormParam("usuarioEmail") String usuarioEmail,@FormParam("usuarioPass") String usuarioPass) throws SQLException, ClassNotFoundException, NamingException, NoSuchAlgorithmException {
         //cuando este en el cliente hay que quitarlo y solo dejar en boolean
         String auxTextoRespuesta="error, email o pass erroneas";
       
-        if (modelo.autenticar("a@a.com", "a")==true){
+        if (modelo.autenticar(usuarioEmail, usuarioPass)==true){
             auxTextoRespuesta="todo correcto";
         }
        return auxTextoRespuesta;
     }
 
-    //falta ponerlo a put y listo
-    @GET
+
+    @PUT
     @Path("Registrarse")
-    public String registrase() throws SQLException, ClassNotFoundException, NamingException, NoSuchAlgorithmException {
+    public void registrase(@FormParam("usuarioModo") String usuarioModo,@FormParam("usuarioEmail") String usuarioEmail,@FormParam("usuarioNombre") String usuarioNombre,@FormParam("usuarioPass") String usuarioPass,@FormParam("usuarioMonedero") String usuarioMonedero) throws SQLException, ClassNotFoundException, NamingException, NoSuchAlgorithmException {
 
-        modelo.registrar("profe", "gaga", "q", "q");
+        modelo.registrar(usuarioModo, usuarioEmail, usuarioNombre, usuarioPass,Integer.getInteger(usuarioMonedero));
 
-        return "hola buenas";
+       
     }
 
     //Alumno
