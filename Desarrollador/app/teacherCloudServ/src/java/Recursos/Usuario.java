@@ -12,12 +12,6 @@ package Recursos;
 public class Usuario {
     private String nombre, password, email, modo;
 
-    public Usuario(String nombre, String password, String email, String modo) {
-        this.nombre = nombre;
-        this.password = password;
-        this.email = email;
-        this.modo = modo;
-    }
 
     public String getNombre() {
         return nombre;
