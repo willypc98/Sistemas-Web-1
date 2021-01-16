@@ -5,6 +5,7 @@
  */
 package Funcionalidad;
 
+import Recursos.Clase;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
@@ -24,7 +25,7 @@ public class BBDD {
 private static Connection con;
     private static final String driver="com.mysql.jdbc.Driver";
     private static final String user="root";
-    private static final String pass="1234a";
+    private static final String pass="root";
     private static final String url="jdbc:mysql://localhost:3306/teacherCloud";
   
 
@@ -164,8 +165,9 @@ private static Connection con;
           }
     
     // busca la clase por el nombre proporcionado y devuelve todo la informacion de esta en el arrayList clase
-    protected ArrayList<String> buscarClase(String nombreClase) {
-      ArrayList<String> clase = new ArrayList();
+    protected Clase buscarClase(String nombreClase) {
+        Clase clase= new Clase();
+      
         try {
             if(conector()==true){
                 String queryBBDD = "select * from TCclase where clase_nombre like '"+nombreClase+"'";
@@ -177,10 +179,11 @@ private static Connection con;
                 }
                 
                 try {
-                    while (rS.next()) {                     
-                        clase.add(rS.getString("clase_nombre"));
-                        clase.add(rS.getString("clase_descripcion"));
-                        clase.add(rS.getString("clase_calificacion"));
+                    while (rS.next()) {   
+                        
+                        clase.setNombre(rS.getString("clase_nombre"));
+                        clase.setDescripcion(rS.getString("clase_descripcion"));
+                        clase.setCalificacion(Integer.parseInt(rS.getString("clase_calificacion")));
 
                     }
                 } catch (SQLException ex) {
@@ -221,8 +224,16 @@ private static Connection con;
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
-    void crearClase(String nombreClase) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    void crearClase(Clase clase) throws SQLException, ClassNotFoundException {
+        
+        
+                    if(conector()==true){
+                
+            createStatement.executeUpdate("INSERT INTO TCclase (clase_nombre,clase_descripcion,clase_calificacion) VALUES ('" + clase.getNombre()  + "','"+clase.getDescripcion()+"',"
+                                          +clase.getCalificacion()+");");
+           con.close();
+           }
+        
     }
 
     void mostrarCalificaciones() {

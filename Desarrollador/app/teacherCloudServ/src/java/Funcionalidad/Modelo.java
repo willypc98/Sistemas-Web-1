@@ -6,6 +6,7 @@
 package Funcionalidad;
 
 import Funcionalidad.BBDD;
+import Recursos.Clase;
 import java.security.NoSuchAlgorithmException;
 import java.sql.SQLException;
 import java.util.ArrayList;
@@ -40,7 +41,7 @@ public class Modelo {
      
      //ALUMNO
      
-    public ArrayList<String> buscarClase(String nombreClase) throws SQLException, ClassNotFoundException, NamingException, NoSuchAlgorithmException {
+    public Clase buscarClase(String nombreClase) throws SQLException, ClassNotFoundException, NamingException, NoSuchAlgorithmException {
          return bbdd.buscarClase(nombreClase);
     }
       public void pedirInscribirse(String incidencias_descripcion) throws SQLException, ClassNotFoundException, NamingException, NoSuchAlgorithmException {
@@ -56,8 +57,8 @@ public class Modelo {
     }
      //PROFESOR
      
-     public void crearClase(String nombreClase) throws SQLException, ClassNotFoundException, NamingException, NoSuchAlgorithmException {
-         bbdd.crearClase(nombreClase);
+     public void crearClase(Clase clase) throws SQLException, ClassNotFoundException, NamingException, NoSuchAlgorithmException {
+         bbdd.crearClase(clase);
     }
     
     public void mostrarCalificaciones(){
@@ -77,5 +78,5 @@ public class Modelo {
          public ArrayList<String> nombreClasePublicada(){
         return bbdd.nombreClasePublicada();
     }
-     
+    
 }
