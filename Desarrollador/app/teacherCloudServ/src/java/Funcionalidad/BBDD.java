@@ -235,9 +235,45 @@ private static Connection con;
            }
         
     }
+/**Busca todas  las calificaciones  **/
+    protected Clase mostrarCalificaciones(String nombreClaseCalificacion) {
+        Clase clase= new Clase();
+      
+        try {
+            if(conector()==true){
+                String queryBBDD = "select clase_calificacion from TCclase where clase_nombre like '"+nombreClaseCalificacion+"';";
+              
+                try {
+                    rS = createStatement.executeQuery(queryBBDD);
+                } catch (SQLException ex) {
+                    Logger.getLogger(BBDD.class.getName()).log(Level.SEVERE, null, ex);
+                }
+                
+                try {
+                    while (rS.next()) {   
+                        clase.setCalificacion(Integer.parseInt(rS.getString("clase_calificacion")));
 
-    void mostrarCalificaciones() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+                    }
+                } catch (SQLException ex) {
+                    Logger.getLogger(BBDD.class.getName()).log(Level.SEVERE, null, ex);
+                }
+                try {
+
+                    con.close();
+                } catch (SQLException ex) {
+                    Logger.getLogger(BBDD.class.getName()).log(Level.SEVERE, null, ex);
+                }
+            
+            }
+            else{
+                return clase;
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(BBDD.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(BBDD.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return clase;
     }
 
     void aceptarPeticion() {

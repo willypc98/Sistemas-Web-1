@@ -61,8 +61,8 @@ public class Modelo {
          bbdd.crearClase(clase);
     }
     
-    public void mostrarCalificaciones(){
-        bbdd.mostrarCalificaciones();
+    public Clase mostrarCalificaciones(String claseCalificacion)throws SQLException, ClassNotFoundException, NamingException, NoSuchAlgorithmException{
+       return bbdd.mostrarCalificaciones(claseCalificacion);
     }
      public void aceptarPeticion(){
         bbdd.aceptarPeticion();

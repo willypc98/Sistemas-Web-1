@@ -128,6 +128,14 @@ Modelo modelo= new Modelo();
         
 
     }
+        @POST
+    @Path("Profesor/BuscarCalificaciones")
+    public Clase buscarCalificaciones(@FormParam("claseCalificacion") String claseCalificacion) throws SQLException, ClassNotFoundException, NamingException, NoSuchAlgorithmException {
+        Clase clase = new Clase();
+        clase = modelo.mostrarCalificaciones(claseCalificacion);
+
+        return clase;
+    }
     /**
      * PUT method for updating or creating an instance of GenericResource
      *
