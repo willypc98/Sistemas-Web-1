@@ -1,1 +1,0 @@
-INSERT INTO TCalumno (alumno_modo,alumno_email,clase_identificador,alumno_monedero) VALUES ('alumno', 'a@a.com',,);

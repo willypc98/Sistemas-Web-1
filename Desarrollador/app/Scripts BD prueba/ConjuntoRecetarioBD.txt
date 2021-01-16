@@ -1,8 +1,0 @@
-create table conjunto_recetario( 
-	usuario_id integer not null,
-	recetario_id integer not null,
-	foreign key (nombre_recetario) references recetario (nombre_recetario),
-	foreign key (usuario_id) references usuario (usuario_id),
-	primary key (usuario_id, recetario_id)
-);
-

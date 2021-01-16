@@ -1,1 +1,0 @@
-alter table TCprofesor ADD CONSTRAINT foreign key (clase_identificador) REFERENCES TCclase(clase_identificador);

@@ -1,1 +1,0 @@
-usuario, alumno, profesor, clase, alter table de alumno, alter table de profesor.

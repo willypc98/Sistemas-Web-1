@@ -1,6 +1,0 @@
-create table usuario(
-	usuario_id integer primary key auto_increment not null,
-	nombre_usuario varchar (20),
-	contaseña varchar (20),
-	email varchar (20)
-);

@@ -1,4 +1,0 @@
-create table ingrediente(
-	ingrediente_id integer primary key auto_increment not null,
-	nombre_ingrediente varchar (20)
-);

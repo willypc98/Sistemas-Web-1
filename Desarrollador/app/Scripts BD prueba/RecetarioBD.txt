@@ -1,5 +1,0 @@
-create table recetario( 
-	recetario_id integer primary key auto_increment,
-	nombre_recetario varchar (20) ,
-	precio double
-);

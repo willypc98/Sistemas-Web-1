@@ -1,4 +1,0 @@
-alter table TCclase ADD CONSTRAINT foreign key (clase_alumno_email) REFERENCES TCusuario (usuario_email);
-alter table TCclase ADD CONSTRAINT foreign key (clase_alumno_modo) REFERENCES TCalumno (alumno_modo);
-alter table TCclase ADD CONSTRAINT foreign key (clase_profesor_email) REFERENCES TCprofesor (profesor_email);
-alter table TCclase ADD CONSTRAINT foreign key (clase_profesor_modo) REFERENCES TCprofesor (profesor_modo);
