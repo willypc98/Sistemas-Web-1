@@ -12,10 +12,6 @@ package Recursos;
 public class Usuario {
     private String nombre, password, email, modo;
 
-<<<<<<< Updated upstream
-=======
- 
->>>>>>> Stashed changes
 
     public String getNombre() {
         return nombre;
