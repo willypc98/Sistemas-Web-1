@@ -54,7 +54,7 @@ Modelo modelo= new Modelo();
       @Produces(MediaType.TEXT_PLAIN)
     public String autenticar(@FormParam("usuarioEmail") String usuarioEmail,@FormParam("usuarioPass") String usuarioPass) throws SQLException, ClassNotFoundException, NamingException, NoSuchAlgorithmException {
         //cuando este en el cliente hay que quitarlo y solo dejar en boolean
-        String auxTextoRespuesta="error, email o pass erroneas";
+        String auxTextoRespuesta="error";
       
         if (modelo.autenticar(usuarioEmail, usuarioPass)==true){
             auxTextoRespuesta="todo correcto";

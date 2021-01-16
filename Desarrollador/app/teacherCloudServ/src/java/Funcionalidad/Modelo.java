@@ -7,6 +7,7 @@ package Funcionalidad;
 
 import Funcionalidad.BBDD;
 import Recursos.Clase;
+import Recursos.Peticion;
 import java.security.NoSuchAlgorithmException;
 import java.sql.SQLException;
 import java.util.ArrayList;
@@ -64,9 +65,13 @@ public class Modelo {
     public Clase mostrarCalificaciones(String claseCalificacion)throws SQLException, ClassNotFoundException, NamingException, NoSuchAlgorithmException{
        return bbdd.mostrarCalificaciones(claseCalificacion);
     }
-     public void aceptarPeticion(){
-        bbdd.aceptarPeticion();
-    }
+//     public void aceptarPeticion(Peticion peticion) throws SQLException, ClassNotFoundException, NamingException, NoSuchAlgorithmException{
+//        bbdd.aceptarPeticion(peticion);
+//    }
+//    public void aceptarPeticion(Peticion peticion) throws SQLException, ClassNotFoundException, NamingException, NoSuchAlgorithmException {
+//         bbdd.crearClase(clase);
+//    }
+     
      public void mostrarPeticion(){
         bbdd.mostrarPeticion();
     }
