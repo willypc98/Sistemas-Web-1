@@ -59,15 +59,27 @@ public class Login extends HttpServlet {
         if (respuesta.equals("Bienvenido " + email)) {
             response.setContentType("text/html;charset=UTF-8");
             try (PrintWriter out = response.getWriter()) {
-           out.println("<!DOCTYPE html>");
+                out.println("<!DOCTYPE html>");
                 out.println("<html>");
                 out.println("<head>");
                 out.println("<link rel='stylesheet' href='css/style-botones.css'>");
                 out.println("</head>");
                 out.println("<body>");
-                out.println("<div class='botones'>");
-                out.println("<button>Buscar Clase</button>");
-                out.println("<button> Reportar</button>");
+                out.println("<div class='menu'>");
+                out.println("<div class='menu2'>");
+                out.println("<div class='buscador'>");
+                out.println("<form method='post' action='/teacherCloudClienteWeb/Alumno/BuscarClase' name='Incidencia'>");
+                out.println("<input id='barra' type='search' name='busquedacodigo' >");
+                out.println("<input id='boton' type='submit' value='Buscar'>");
+                out.println("</form>");
+                out.println("</div>");
+                out.println("<div class='reportar'>");
+                out.println("<form action='http://localhost:8084/teacherCloudClienteWeb/incidencia.html%22%3E'>");
+                out.println("<input id='boton' type='submit' value='reportar'>");
+                out.println("</form>");
+                out.println("</div>");
+                out.println("</div>");
+                out.println("</div>");
                 for(Clase clase : cj.getArrayClases()){
                 
                 
