@@ -281,8 +281,8 @@ private static Connection con;
        
      if(conector()==true){
                 
-            createStatement.executeUpdate("INSERT INTO TCpeticion (peticion_estado,usuario_email,clase_identificaddor) VALUES ('" + peticion.getEstado()  + "','"+peticion.getUsuarioEmail()+"',"
-                                          +peticion.getUsuarioEmail()+");");
+            createStatement.executeUpdate("INSERT INTO TCpeticion (peticion_estado,usuario_email,clase_identificador) VALUES ('" + peticion.getEstado()  + "','"+peticion.getUsuarioEmail()+"',"
+                                          +peticion.getClaseIdentificador()+");");
            con.close();
            }
         
@@ -295,7 +295,7 @@ protected Peticion mostrarPeticion(String peticionEstado) {
         try {
             
             if(conector()==true){
-                String queryBBDD = "select * from TCpeticion where where peticion_estado like '"+peticionEstado+"';";
+                String queryBBDD = "select * from TCpeticion where peticion_estado like '"+ peticionEstado +"';";
               System.err.println("hola2");
                 try {
                     rS = createStatement.executeQuery(queryBBDD);
