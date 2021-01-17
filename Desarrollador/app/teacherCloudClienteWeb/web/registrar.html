@@ -29,10 +29,19 @@
                 </div>
 
             </div>
-            <button class="enviar">Enviar</button>
+            <button class="enviar" onclick="popup()">Enviar</button>
             </form>
 
 
         </div>  
+        <script>
+            function popup() { 
+            var con1 = document.getElementsByName('password');
+            var con2 = document.getElementsByTagName('password2');
+            if(con1 != con2){
+                alert('Contraseñas erróneas'); 
+            }
+        }
+        </script>
     </body>
 </html>
