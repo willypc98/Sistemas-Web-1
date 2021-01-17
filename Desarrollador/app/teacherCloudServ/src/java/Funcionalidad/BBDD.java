@@ -186,6 +186,7 @@ private static Connection con;
                         clase.setNombre(rS.getString("clase_nombre"));
                         clase.setDescripcion(rS.getString("clase_descripcion"));
                         clase.setCalificacion(Integer.parseInt(rS.getString("clase_calificacion")));
+                     
 
                     }
                 } catch (SQLException ex) {
@@ -218,13 +219,7 @@ private static Connection con;
            }
     }
     
-      protected void mostrarChatsAlumno(String correoAlumno) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
 
-    void mostrarChatsProfesor(String correoProfesor) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
 
     void crearClase(Clase clase) throws SQLException, ClassNotFoundException {
         

@@ -21,8 +21,10 @@ public class Clase {
     private String nombre;
       @XmlElement()
     private String descripcion;
-    
+    @XmlElement()
    private int calificacion;
+   @XmlElement()
+   private int identificador;
 
     public String getNombre() {
         return nombre;
@@ -46,5 +48,13 @@ public class Clase {
 
     public void setCalificacion(int calificacion) {
         this.calificacion = calificacion;
+    }
+
+    public int getIdentificador() {
+        return identificador;
+    }
+
+    public void setIdentificador(int identificador) {
+        this.identificador = identificador;
     }
 }
