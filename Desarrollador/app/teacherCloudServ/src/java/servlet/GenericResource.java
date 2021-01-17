@@ -72,11 +72,11 @@ Modelo modelo= new Modelo();
     @POST
     @Path("Registrarse")
     @Consumes("application/xml")
-    public String registrase(Usuario user)throws SQLException, ClassNotFoundException, NamingException, NoSuchAlgorithmException {
+    public void registrase(Usuario user)throws SQLException, ClassNotFoundException, NamingException, NoSuchAlgorithmException {
        
         //(@FormParam("usuarioModo") String usuarioModo,@FormParam("usuarioEmail") String usuarioEmail,@FormParam("usuarioNombre") String usuarioNombre,@FormParam("usuarioPass") String usuarioPass,@FormParam("usuarioMonedero") String usuarioMonedero)
         //modelo.registrar(usuarioModo, usuarioEmail, usuarioNombre, usuarioPass,Integer.getInteger(usuarioMonedero));
-        return modelo.registrar(user.getModo(), user.getEmail(), user.getNombre(),user.getPassword(), user.getMonedero());
+         modelo.registrar(user.getModo(), user.getEmail(), user.getNombre(),user.getPassword(), user.getMonedero());
        
     }
 

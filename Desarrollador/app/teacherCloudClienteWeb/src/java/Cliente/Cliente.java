@@ -43,11 +43,9 @@ public class Cliente {
         resource = resource.path("Login");
          return resource.request(javax.ws.rs.core.MediaType.APPLICATION_XML).get(String.class);
     }
-   public Response registrar(Object requestEntity) throws ClientErrorException {
-        WebTarget resource = webTarget;
-         resource = resource.path("Registrarse");
-          return resource.request(javax.ws.rs.core.MediaType.APPLICATION_XML).post(javax.ws.rs.client.Entity.entity(requestEntity, javax.ws.rs.core.MediaType.APPLICATION_XML));
-   
+   public void registrar(Object requestEntity) throws ClientErrorException {
+       
+        webTarget.path("Registrarse").request(javax.ws.rs.core.MediaType.APPLICATION_XML).post(javax.ws.rs.client.Entity.entity(requestEntity, javax.ws.rs.core.MediaType.APPLICATION_XML));
         
         }
    

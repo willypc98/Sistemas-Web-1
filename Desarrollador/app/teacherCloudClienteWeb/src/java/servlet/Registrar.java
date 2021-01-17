@@ -47,19 +47,15 @@ public class Registrar extends HttpServlet {
         user.setModo(modo);
         user.setMonedero(30);
       
-        System.out.println(user.getEmail());
+       
         
         if(password.equals(password2)==true){
+          modelo.registrar(user);
           
-          
-          if (modelo.registrar(user).equals("error")) {
-            respuesta = "Usuario invalido";
-           } else {
-//            ServletContext contexto = request.getServletContext();
-//            contexto.setInitParameter("id", id.toString());
+     
             respuesta = "Usuario registrado";
 
-        }
+        
         }else{
         respuesta = "contraseñas distintas";
         }

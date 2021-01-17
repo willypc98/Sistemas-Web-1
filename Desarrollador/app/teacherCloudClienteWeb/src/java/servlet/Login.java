@@ -56,23 +56,16 @@ public class Login extends HttpServlet {
         if (respuesta.equals("Bienvenido " + email)) {
             response.setContentType("text/html;charset=UTF-8");
             try (PrintWriter out = response.getWriter()) {
-                /* TODO output your page here. You may use following sample code. */
-                out.println("<!DOCTYPE html>");
+           out.println("<!DOCTYPE html>");
                 out.println("<html>");
                 out.println("<head>");
-                out.println("<title>Servlet Login</title>");
+                out.println("<link rel='stylesheet' href='css/style-botones.css'>");
                 out.println("</head>");
                 out.println("<body>");
-                out.println("<h1>" + respuesta + "</h1>");
-                out.println("<a href=\"registrar.html\">Valida los recetarios<br/></font></a>");
-//                out.println("<a href=\"menuReceta.html\">Menú Receta<br/></font></a>");
-//                out.println("<a href=\"menuRecetario.html\">Menú Recetario<br/></font></a>");
-//                out.println("<h1> Recetarios disponibles</h1>");
-////
-//                for (String name : modelo.obtenerRecetarios(id)) {
-//                    out.println("<h3>" + name + "</h3>");
-//
-//                }
+                out.println("<div class='botones'>");
+                out.println("<button>Buscar Clase</button>");
+                out.println("<button> Reportar</button>");
+                out.println("</div>");
                 out.println("</body>");
                 out.println("</html>");
             }
