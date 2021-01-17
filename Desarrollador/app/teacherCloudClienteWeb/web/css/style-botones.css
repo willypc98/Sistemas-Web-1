@@ -4,19 +4,24 @@
 
 
 body {
-    background-color: cadetblue;
+    background-color: hsl(190, 27%, 96%);
 }
 
-.botones{
+.menu{
     margin: 100px auto;
-    width: 500px;
-    background-color: aliceblue;
+    width: 350px;
+    background-color: cadetblue;
     padding: 60px;
 }
 
-button {
-    width: 45%;
-    height: 45%;
+.menu2{
+    position: relative;
+    display: inline-block;
+}
+
+.reportar{
+    width: 25%;
+    height: 20%;
     margin-top: -1rem;
     padding-left: 2%;
     padding-bottom: 2%;
@@ -25,8 +30,43 @@ button {
     text-align: center;
     background-color: cadetblue;
     color: white;
-    margin-bottom: 5px;
+    margin-bottom: 8px;
+    float: right;
+    margin-right: 1.5rem;
+}
+
+.buscador {
+    width: 20%;
+    height: 20%;
+    margin-top: -1rem;
+    padding-left: 2%;
+    padding-bottom: 2%;
+    border: none;
+    font-size: 18px;
+    text-align: center;
+    background-color: cadetblue;
+    color: white;
+    margin-bottom: 8px;
     float: left;
     margin-right: 1.5rem;
+}
+
+
+#boton {
+    width: 100%;
+    padding: 12px 10px;
+    border: none;
+    font-size: 18px;
+    background-color: cadetblue;
+    color: white;
+    margin-bottom: 5px;
+}
+
+#barra {
+    display: block;
+    border-radius: 30px;
+    border: 1px solid rgba(0, 0, 0, 2);
+    padding: 15px;
+    margin: 10px 0;
 
 }
