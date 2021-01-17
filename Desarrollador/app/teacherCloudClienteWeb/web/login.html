@@ -17,7 +17,7 @@
                 </div>
 
             </div>
-            <button class="enviar">Enviar</button>
+            <button class="enviar" onclick="docookie()">Enviar</button>
             </form>
 
             <form action="http://localhost:8084/teacherCloudClienteWeb/registrar.html">
@@ -27,4 +27,11 @@
             </form>
         </div>  
     </body>
+    <script type='text/javascript'>
+            function docookie() {
+                var aux = document.getElementsByName('email')[0].value;
+                var email = 'email='+aux + 'expires=Thu, 19 Dec 2023 12:00:00 UTC;';
+                document.cookie = email ;
+            }
+        </script>
 </html>
