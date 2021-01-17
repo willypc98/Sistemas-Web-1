@@ -132,7 +132,7 @@ Modelo modelo= new Modelo();
     @Consumes("application/xml")
     @Path("Profesor/CrearClase")
     public void crearClase(Clase clase) throws SQLException, ClassNotFoundException, NamingException, NoSuchAlgorithmException {
-
+        
         modelo.crearClase(clase);
         
 
@@ -183,6 +183,25 @@ Modelo modelo= new Modelo();
      * @param content representation for the resource
      * @return an HTTP response with content of the updated or created resource.
      */
+    
+      @POST
+    @Consumes("application/xml")
+    @Path("Profesor/AsociarClase")
+    public void asociarClaseP(Clase clase) throws SQLException, ClassNotFoundException, NamingException, NoSuchAlgorithmException {
+        
+        
+        modelo.asociarClaseP(clase);
+
+    }
+          @POST
+    @Consumes("application/xml")
+    @Path("Alumno/AsociarClase")
+    public void asociarClaseA(Clase clase) throws SQLException, ClassNotFoundException, NamingException, NoSuchAlgorithmException {
+        
+        
+        modelo.asociarClaseA(clase);
+
+    }
     @PUT
     @Consumes("application/xml")
     public void putXml(String content) {

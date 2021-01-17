@@ -78,6 +78,10 @@ private String ruta = carpeta.getPath();
     public void ofertarClase(Clase clase){
         cli.ofertarClase(clase);
     }
-       
+     //otras
+    
+      public void asociarClaseP(Clase clase){
+        cli.asociarClaseP(clase);
+    }
        
 }

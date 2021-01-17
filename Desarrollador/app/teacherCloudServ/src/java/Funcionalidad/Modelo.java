@@ -93,4 +93,8 @@ public class Modelo {
     public Usuario mostrarModo(String usuarioEmail) throws SQLException, ClassNotFoundException, NamingException, NoSuchAlgorithmException {
          return bbdd.mostrarModo(usuarioEmail);
  } 
+
+    public void asociarClaseP(Clase clase) throws SQLException, ClassNotFoundException {
+       bbdd.asociarClaseP(clase);
+    }
 }

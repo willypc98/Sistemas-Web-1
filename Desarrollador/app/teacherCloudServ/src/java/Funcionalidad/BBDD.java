@@ -566,4 +566,24 @@ protected Peticion mostrarPeticion(String peticionEstado) {
         }
         return usuario;
     }
+     protected void asociarClaseP(Clase clase) throws SQLException, ClassNotFoundException {
+        
+        
+                    if(conector()==true){
+            
+            createStatement.executeUpdate("INSERT INTO TCclaseUsuario (usuario_modo,usuario_email,clase_identificador) VALUES  ('profesor', '"+clase.getNombreTutor()+"' ,'"+clase.getIdentificador()+"');");
+           con.close();
+           }
+        
+    }
+      protected void asociarClaseA(Clase clase) throws SQLException, ClassNotFoundException {
+        
+        
+                    if(conector()==true){
+            
+            createStatement.executeUpdate("INSERT INTO TCclaseUsuario (usuario_modo,usuario_email,clase_identificador) VALUES  ('profesor', '"+clase.getNombreTutor()+"' ,'"+clase.getIdentificador()+"');");
+           con.close();
+           }
+        
+    }
 }

@@ -102,5 +102,9 @@ public class Cliente {
     
    
     }
+     public void asociarClaseP(Object requestEntity)throws ClientErrorException{
+          webTarget.path("Profesor/AsociarClase").request(javax.ws.rs.core.MediaType.APPLICATION_XML).post(javax.ws.rs.client.Entity.entity(requestEntity, javax.ws.rs.core.MediaType.APPLICATION_XML));
     
+   
+    }
 }
