@@ -5,19 +5,22 @@
  */
 package servlet;
 
+import recursos.Usuario;
+
+
 import java.io.IOException;
 import java.io.PrintWriter;
+import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import recursos.Usuario;
 
 /**
  *
  * @author david
  */
-public class Registrar extends HttpServlet {
+public class Login1 extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -30,20 +33,18 @@ public class Registrar extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-               String email = request.getParameter("email");
-               String nombre = request.getParameter("nombre");
+//     ServletContext context = null ;
+        String email = request.getParameter("email");
         String password = request.getParameter("password");
-        String password2 = request.getParameter("password2");
-        String modo = request.getParameter("modo");
         String respuesta = "";
-       
+        String valor;//te dice si falla o no
 
-        Modelo modelo = new Modelo();
+       Modelo modelo = new Modelo();
         Usuario user = new Usuario();
 
-        user.setNombre(nombre);
         user.setEmail(email);
         user.setPassword(password);
+<<<<<<< HEAD:Desarrollador/app/teacherCloudClienteWeb/src/java/servlet/Registrar.java
         user.setModo(modo);
         user.setMonedero(30);
       
@@ -64,6 +65,21 @@ public class Registrar extends HttpServlet {
 
         
         if (respuesta.equals("Usuario registrado")) {
+=======
+        valor = modelo.validarUsuario(user);
+        System.out.println(valor);
+
+        if (valor.equals("error")) {
+            respuesta = "Usuario invalido";
+
+        } else {
+//            ServletContext contexto = request.getServletContext();
+//            contexto.setInitParameter("id", id.toString());
+            respuesta = "Bienvenido " + email;
+
+        }
+        if (respuesta.equals("Bienvenido " + email)) {
+>>>>>>> parent of ad24fb0... registrar funciona:Desarrollador/app/teacherCloudClienteWeb/src/java/servlet/Login1.java
             response.setContentType("text/html;charset=UTF-8");
             try (PrintWriter out = response.getWriter()) {
                 /* TODO output your page here. You may use following sample code. */

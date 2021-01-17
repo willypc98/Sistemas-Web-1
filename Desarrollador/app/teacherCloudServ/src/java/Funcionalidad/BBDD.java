@@ -486,46 +486,4 @@ protected Peticion mostrarPeticion(String peticionEstado) {
         }
         return clase;
     }
-
-    protected String existeUsuario(String nombre) {
-        String respuesta= "no";
-        try {
-            if(conector()==true){
-                String queryBBDD = "select usuario_nombre from TCusuario ;";
-              
-                try {
-                    rS = createStatement.executeQuery(queryBBDD);
-                } catch (SQLException ex) {
-                    Logger.getLogger(BBDD.class.getName()).log(Level.SEVERE, null, ex);
-                }
-                
-                try {
-                    while (rS.next()) {                     
-                        if(rS.getString("usuario_nombre").equals(nombre)){
-                         respuesta="si";
-                        }
-                        
-
-                    }
-                } catch (SQLException ex) {
-                    Logger.getLogger(BBDD.class.getName()).log(Level.SEVERE, null, ex);
-                }
-                try {
-
-                    con.close();
-                } catch (SQLException ex) {
-                    Logger.getLogger(BBDD.class.getName()).log(Level.SEVERE, null, ex);
-                }
-            
-            }
-            else{
-                return respuesta;
-            }
-        } catch (SQLException ex) {
-            Logger.getLogger(BBDD.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (ClassNotFoundException ex) {
-            Logger.getLogger(BBDD.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        return respuesta;
-    }
 }

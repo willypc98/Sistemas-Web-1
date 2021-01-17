@@ -38,16 +38,24 @@ public class Modelo {
 private File carpeta = new File(sCarpAct);
 private String ruta = carpeta.getPath();
     
+<<<<<<< HEAD
  //USUARIO
     //login
+=======
+
+    //loguin
+>>>>>>> parent of ad24fb0... registrar funciona
      public String validarUsuario(Usuario usuario){
      return cli.validarUsuario(usuario.getEmail(), usuario.getPassword());
      }
      
+<<<<<<< HEAD
       public String registrar(Usuario user){
       cli.registrar(user);
       return "si";
     }
+=======
+>>>>>>> parent of ad24fb0... registrar funciona
 
       
  //ALUMNO

@@ -9,9 +9,12 @@ import javax.ws.rs.ClientErrorException;
 import javax.ws.rs.client.Client;
 import javax.ws.rs.client.Invocation;
 import javax.ws.rs.client.WebTarget;
+<<<<<<< HEAD
 import javax.ws.rs.core.Response;
 import recursos.Clase;
 import recursos.Usuario;
+=======
+>>>>>>> parent of ad24fb0... registrar funciona
 
 /**
  * Jersey REST client generated for REST resource:GenericResource [Usuario]<br>
@@ -43,6 +46,7 @@ public class Cliente {
         resource = resource.path("Login");
          return resource.request(javax.ws.rs.core.MediaType.APPLICATION_XML).get(String.class);
     }
+<<<<<<< HEAD
    public void registrar(Object requestEntity) throws ClientErrorException {
        
         webTarget.path("Registrarse").request(javax.ws.rs.core.MediaType.APPLICATION_XML).post(javax.ws.rs.client.Entity.entity(requestEntity, javax.ws.rs.core.MediaType.APPLICATION_XML));
@@ -60,6 +64,8 @@ public class Cliente {
     public void incidencia(Object requestEntity) {
         webTarget.path("Alumno/Incidencia").request(javax.ws.rs.core.MediaType.APPLICATION_XML).post(javax.ws.rs.client.Entity.entity(requestEntity, javax.ws.rs.core.MediaType.APPLICATION_XML));
     }
+=======
+>>>>>>> parent of ad24fb0... registrar funciona
 
     
 }

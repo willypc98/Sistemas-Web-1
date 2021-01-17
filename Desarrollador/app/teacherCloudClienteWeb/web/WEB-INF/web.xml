@@ -4,6 +4,7 @@
         <servlet-name>Login</servlet-name>
         <servlet-class>servlet.Login</servlet-class>
     </servlet>
+<<<<<<< HEAD
     <servlet>
         <servlet-name>Registrar</servlet-name>
         <servlet-class>servlet.Registrar</servlet-class>
@@ -16,10 +17,13 @@
         <servlet-name>BuscarClase</servlet-name>
         <servlet-class>servlet.BuscarClase</servlet-class>
     </servlet>
+=======
+>>>>>>> parent of ad24fb0... registrar funciona
     <servlet-mapping>
         <servlet-name>Login</servlet-name>
         <url-pattern>/Login</url-pattern>
     </servlet-mapping>
+<<<<<<< HEAD
     <servlet-mapping>
         <servlet-name>Registrar</servlet-name>
         <url-pattern>/Registrar</url-pattern>
@@ -32,6 +36,8 @@
         <servlet-name>BuscarClase</servlet-name>
         <url-pattern>/BuscarClase</url-pattern>
     </servlet-mapping>
+=======
+>>>>>>> parent of ad24fb0... registrar funciona
     <session-config>
         <session-timeout>
             30
