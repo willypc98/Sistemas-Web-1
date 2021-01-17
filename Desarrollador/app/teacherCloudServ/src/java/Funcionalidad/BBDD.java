@@ -243,7 +243,7 @@ private static Connection con;
       
         try {
             if(conector()==true){
-                String queryBBDD = "select clase_calificacion from TCclase where clase_nombre like '"+nombreClaseCalificacion+"';";
+                String queryBBDD = "select * from TCclase where clase_nombre like '"+nombreClaseCalificacion+"';";
               
                 try {
                     rS = createStatement.executeQuery(queryBBDD);
