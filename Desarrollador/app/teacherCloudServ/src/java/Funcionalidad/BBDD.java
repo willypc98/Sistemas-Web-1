@@ -566,6 +566,47 @@ protected Peticion mostrarPeticion(String peticionEstado) {
         }
         return usuario;
     }
+        protected ArrayList<Clase> clasesAsociadas(String usuarioEmail) {
+             ArrayList<Clase> claseArray = new ArrayList();
+     
+        try {
+            if(conector()==true){
+                String queryBBDD = " select clase_nombre, clase_calificacion from TCclase inner join TCclaseUsuario on TCclase.clase_identificador=TCclaseUsuario.clase_identificador where usuario_email like '"+usuarioEmail +"';";
+
+                try {
+                    rS = createStatement.executeQuery(queryBBDD);
+                } catch (SQLException ex) {
+                    Logger.getLogger(BBDD.class.getName()).log(Level.SEVERE, null, ex);
+                }
+
+                try {
+                    while (rS.next()) {
+                        Clase clase= new Clase();
+                     clase.setNombre(rS.getString("clase_nombre"));
+                      clase.setCalificacion(Integer.parseInt(rS.getString("clase_calificacion")));
+                      claseArray.add(clase);
+                    }
+                } catch (SQLException ex) {
+                    Logger.getLogger(BBDD.class.getName()).log(Level.SEVERE, null, ex);
+                }
+                try {
+
+                    con.close();
+                } catch (SQLException ex) {
+                    Logger.getLogger(BBDD.class.getName()).log(Level.SEVERE, null, ex);
+                }
+
+            }
+            else{
+                return claseArray;
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(BBDD.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(BBDD.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return claseArray;
+    }
      protected void asociarClaseP(Clase clase) throws SQLException, ClassNotFoundException {
         
         

@@ -177,6 +177,15 @@ Modelo modelo= new Modelo();
 
       return usuario;
     }
+    @GET
+    @Path("Profesor/mostrarClasesAsociadas")
+    @Produces("application/xml")
+    public ConjuntoClases mostrarClasesAsociadas(@QueryParam("usuarioEmail") String usuarioEmail) throws SQLException, ClassNotFoundException, NamingException, NoSuchAlgorithmException {
+    ConjuntoClases cjClases = new ConjuntoClases();
+    cjClases.setArrayClases(modelo.buscarClasesAsociadas(usuarioEmail));
+
+      return cjClases;
+    }
     /**
      * PUT method for updating or creating an instance of GenericResource
      *

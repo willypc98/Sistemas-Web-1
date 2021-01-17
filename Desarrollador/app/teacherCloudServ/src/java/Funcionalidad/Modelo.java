@@ -78,6 +78,9 @@ public class Modelo {
 //    public void aceptarPeticion(Peticion peticion) throws SQLException, ClassNotFoundException, NamingException, NoSuchAlgorithmException {
 //         bbdd.crearClase(clase);
 //    }
+     public ArrayList<Clase> buscarClasesAsociadas(String nombreUsuario) throws SQLException, ClassNotFoundException {
+       return bbdd.clasesAsociadas(nombreUsuario);
+    }
      
      public Peticion mostrarPeticion(String peticionEstado) throws SQLException, ClassNotFoundException, NamingException, NoSuchAlgorithmException {
          return bbdd.mostrarPeticion(peticionEstado);
@@ -96,5 +99,8 @@ public class Modelo {
 
     public void asociarClaseP(Clase clase) throws SQLException, ClassNotFoundException {
        bbdd.asociarClaseP(clase);
+    }
+     public void asociarClaseA(Clase clase) throws SQLException, ClassNotFoundException {
+       bbdd.asociarClaseA(clase);
     }
 }
