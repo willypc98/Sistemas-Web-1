@@ -12,6 +12,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import recursos.Clase;
+import recursos.ConjuntoClases;
 
 /**
  *
@@ -30,15 +31,18 @@ public class MostrarCalificaciones extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-           Clase clase = new Clase();
+          
+               Modelo modelo = new Modelo();
+               ConjuntoClases cj = new ConjuntoClases();
         response.setContentType("text/html;charset=UTF-8");
-          String nombreClase = request.getParameter("nombreClase");
+          String emailProfe = request.getParameter("emailProfe");
         String respuesta = "";
         String valor= "alloo";//te dice si falla o no
+        cj = modelo.mostrarClasesAsociadas(emailProfe);
 
-       Modelo modelo = new Modelo();
+   
       
-    clase= modelo.mostrarCalificaciones(nombreClase);
+
       
 
      
@@ -58,8 +62,14 @@ public class MostrarCalificaciones extends HttpServlet {
                 out.println("<title>Servlet Login</title>");
                 out.println("</head>");
                 out.println("<body>");
-                out.println("<h1>" + nombreClase+ "</h1>");
-                out.println("<h1>" + clase.getCalificacion()+ "</h1>");
+                    for(Clase clase : cj.getArrayClases()){
+                
+                
+                     out.println("<h3>"+clase.getNombre()+"</h3>");
+                     out.println("<h3>"+clase.getCalificacion()+"</h3>");
+                    
+                }
+            
                 out.println("</body>");
                 out.println("</html>");
             }

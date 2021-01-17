@@ -39,7 +39,7 @@ public class BuscarClase extends HttpServlet {
        Modelo modelo = new Modelo();
       
     clase= modelo.buscarClase(nombreClase);
-      
+     
 
      
 //            ServletContext contexto = request.getServletContext();
@@ -56,6 +56,7 @@ public class BuscarClase extends HttpServlet {
                 out.println("<html>");
                 out.println("<head>");
                 out.println("<title>Servlet Login</title>");
+                
                 out.println("</head>");
                 out.println("<body>");
                 out.println("<h1>" + clase.getNombre()+ "</h1>");

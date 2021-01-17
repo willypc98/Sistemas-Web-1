@@ -74,6 +74,9 @@ private String ruta = carpeta.getPath();
         return cli.mostrarModo(usuarioEmail).getModo();
         
     } 
+     public ConjuntoClases mostrarClasesAsociadas(String emailProfe) {
+      return cli.mostrarClasesAsociadas(emailProfe);
+    }
     
     public void ofertarClase(Clase clase){
         cli.ofertarClase(clase);

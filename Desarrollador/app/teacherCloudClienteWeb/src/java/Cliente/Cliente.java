@@ -84,6 +84,12 @@ public class Cliente {
         
    
     }
+     public ConjuntoClases mostrarClasesAsociadas(String emailProfe) throws ClientErrorException {
+        WebTarget resource = webTarget;   
+        resource = resource.queryParam("usuarioEmail", emailProfe);
+        resource = resource.path("Alumno/BuscarClasePublicada");
+         return resource.request(javax.ws.rs.core.MediaType.APPLICATION_XML).get(ConjuntoClases.class);
+    }
         public Clase mostrarCalificaciones(String nombreClase)throws ClientErrorException{
         WebTarget resource = webTarget;   
          resource = resource.queryParam("claseCalificacion", nombreClase);
