@@ -32,6 +32,10 @@
         <servlet-name>AdministrarPeticiones</servlet-name>
         <servlet-class>servlet.AdministrarPeticiones</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>Inscribirse</servlet-name>
+        <servlet-class>servlet.Inscribirse</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>Login</servlet-name>
         <url-pattern>/Login</url-pattern>
@@ -63,6 +67,10 @@
     <servlet-mapping>
         <servlet-name>AdministrarPeticiones</servlet-name>
         <url-pattern>/AdministrarPeticiones</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Inscribirse</servlet-name>
+        <url-pattern>/Inscribirse</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
