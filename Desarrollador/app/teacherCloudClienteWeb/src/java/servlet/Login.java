@@ -75,7 +75,7 @@ public class Login extends HttpServlet {
                 out.println("</form>");
                 out.println("</div>");
                 out.println("<div class='reportar'>");
-                out.println("<form action='http://localhost:8084/teacherCloudClienteWeb/incidencia.html%22%3E'>");
+                out.println("<form action='http://localhost:8084/teacherCloudClienteWeb/incidencia.html'>");
                 out.println("<input id='boton' type='submit' value='reportar'>");
                 out.println("</form>");
                 out.println("</div>");
@@ -111,59 +111,79 @@ public class Login extends HttpServlet {
 
         }
 
-      }else{
-         response.setContentType("text/html;charset=UTF-8");
+        } else {
+            response.setContentType("text/html;charset=UTF-8");
             try (PrintWriter out = response.getWriter()) {
-                /* TODO output your page here. You may use following sample code. */
                 out.println("<!DOCTYPE html>");
                 out.println("<html>");
                 out.println("<head>");
-                out.println("<title>Servlet Login</title>");
+                out.println("<link rel='stylesheet' href='css/style-profesor.css'>");
                 out.println("</head>");
                 out.println("<body>");
-                out.println("<h1>" + " hola profe" + "</h1>");
+                out.println("<div class='menu'>");
+                out.println("<div class='menu2'> ");
+                out.println("<div class='ofertar'>");
+                out.println("<form action='http://localhost:8084/teacherCloudClienteWeb/publicarClase.html'>");
+                out.println("<input id='boton' type='submit' value='Ofertar Clase'>");
+                out.println("</form>");
+                out.println("</div>");
+                out.println("<div class='lista'>");
+                out.println("<form action='' >");
+                out.println("<input id='boton' type='submit' value='Lista'>");
+                out.println("</form>");
+                out.println("</div>");
+                out.println("<div class='clasificar'>");
+                out.println("<form action='http://localhost:8084/teacherCloudClienteWeb/clasificar.html'>");
+                out.println("<input id='boton' type='submit' value='Calificar'>");
+                out.println("</form>");
+                out.println("</div>");
+                out.println("</div>");
+                out.println("</div>");
                 out.println("</body>");
                 out.println("</html>");
             }
+            }
+        }  // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
+        /**
+         * Handles the HTTP <code>GET</code> method.
+         *
+         * @param request servlet request
+         * @param response servlet response
+         * @throws ServletException if a servlet-specific error occurs
+         * @throws IOException if an I/O error occurs
+         */
+        @Override
+        protected void doGet
+        (HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+            processRequest(request, response);
         }
-    }
-    // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
-    /**
-     * Handles the HTTP <code>GET</code> method.
-     *
-     * @param request servlet request
-     * @param response servlet response
-     * @throws ServletException if a servlet-specific error occurs
-     * @throws IOException if an I/O error occurs
-     */
-    @Override
-    protected void doGet(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
-        processRequest(request, response);
-    }
 
-    /**
-     * Handles the HTTP <code>POST</code> method.
-     *
-     * @param request servlet request
-     * @param response servlet response
-     * @throws ServletException if a servlet-specific error occurs
-     * @throws IOException if an I/O error occurs
-     */
-    @Override
-    protected void doPost(HttpServletRequest request, HttpServletResponse response)
+        /**
+         * Handles the HTTP <code>POST</code> method.
+         *
+         * @param request servlet request
+         * @param response servlet response
+         * @throws ServletException if a servlet-specific error occurs
+         * @throws IOException if an I/O error occurs
+         */
+        @Override
+        protected void doPost
+        (HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
-    }
+            processRequest(request, response);
+        }
 
-    /**
-     * Returns a short description of the servlet.
-     *
-     * @return a String containing servlet description
-     */
-    @Override
-    public String getServletInfo() {
+        /**
+         * Returns a short description of the servlet.
+         *
+         * @return a String containing servlet description
+         */
+        @Override
+        public String getServletInfo
+        
+            () {
         return "Short description";
-    }// </editor-fold>
-
+        }// </editor-fold>
+    
 }
