@@ -60,6 +60,7 @@ public class MostrarCalificaciones extends HttpServlet {
                 out.println("<html>");
                 out.println("<head>");
                 out.println("<title>Servlet Login</title>");
+                out.println("<link rel='stylesheet' href='css/style-buscarcla.css'>");
                 out.println("</head>");
                 out.println("<body>");
                     for(Clase clase : cj.getArrayClases()){

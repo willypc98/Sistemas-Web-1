@@ -11,6 +11,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import recursos.Clase;
 
 /**
  *
@@ -32,6 +33,12 @@ public class Inscribirse extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         
         Modelo modelo = new Modelo();
+        Clase clase = new Clase();
+        int identificadorClase =  (int) request.getAttribute("identificadorClase");
+         String emailAlumno =  (String) request.getAttribute("emailAlumno");
+         clase.setNombreTutor(emailAlumno);
+         clase.setIdentificador(identificadorClase);
+        modelo.cli.asociarClaseA(clase);
         try (PrintWriter out = response.getWriter()) {
             /* TODO output your page here. You may use following sample code. */
             out.println("<!DOCTYPE html>");
@@ -40,7 +47,8 @@ public class Inscribirse extends HttpServlet {
             out.println("<title>Servlet Inscribirse</title>");            
             out.println("</head>");
             out.println("<body>");
-            out.println("<h1>Servlet Inscribirse at " + request.getContextPath() + "</h1>");
+            out.println("<h1>Servlet Inscribirse at " + identificadorClase + "</h1>");
+            out.println("<h1>Servlet Inscribirse at " + emailAlumno + "</h1>");
             out.println("</body>");
             out.println("</html>");
         }

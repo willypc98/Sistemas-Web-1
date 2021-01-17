@@ -622,7 +622,7 @@ protected Peticion mostrarPeticion(String peticionEstado) {
         
                     if(conector()==true){
             
-            createStatement.executeUpdate("INSERT INTO TCclaseUsuario (usuario_modo,usuario_email,clase_identificador) VALUES  ('profesor', '"+clase.getNombreTutor()+"' ,'"+clase.getIdentificador()+"');");
+            createStatement.executeUpdate("INSERT INTO TCclaseUsuario (usuario_modo,usuario_email,clase_identificador) VALUES  ('alumno', '"+clase.getNombreTutor()+"' ,'"+clase.getIdentificador()+"');");
            con.close();
            }
         

@@ -87,4 +87,8 @@ private String ruta = carpeta.getPath();
         cli.asociarClaseP(clase);
     }
        
+        public void asociarClaseA(Clase clase){
+        cli.asociarClaseA(clase);
+    }
+       
 }

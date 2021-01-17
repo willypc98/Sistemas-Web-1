@@ -71,7 +71,8 @@ public class Login extends HttpServlet {
                 out.println("<div class='buscador'>");
                 out.println("<form method='post' action='/teacherCloudClienteWeb/BuscarClase' name='Incidencia'>");
                 out.println("<input id='barra' type='search' name='nombreClase' placeholder='introducir la clase y dar enter' >");
-                //out.println("<input id='boton' type='submit' value='Buscar'>");
+                out.println("<input id='barra' type='search' name='emailAlumno' placeholder='introducir email' >");
+                out.println("<input id='boton' type='submit' value='Buscar'>");
                 out.println("</form>");
                 out.println("</div>");
                 out.println("<div class='reportar'>");

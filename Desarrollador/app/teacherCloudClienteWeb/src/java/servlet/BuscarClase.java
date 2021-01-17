@@ -7,6 +7,7 @@ package servlet;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -33,14 +34,17 @@ public class BuscarClase extends HttpServlet {
         Clase clase = new Clase();
         response.setContentType("text/html;charset=UTF-8");
           String nombreClase = request.getParameter("nombreClase");
+          String emailAlumno = request.getParameter("emailAlumno");
         String respuesta = "";
         String valor= "alloo";//te dice si falla o no
 
        Modelo modelo = new Modelo();
       
     clase= modelo.buscarClase(nombreClase);
-     
-
+   //emailAlumno="hio";
+      request.setAttribute("identificadorClase", clase.getIdentificador());
+       request.setAttribute("emailAlumno", emailAlumno);
+       getServletContext().getRequestDispatcher("/Inscribirse").forward(request,response);
      
 //            ServletContext contexto = request.getServletContext();
 //            contexto.setInitParameter("id", id.toString());

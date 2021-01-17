@@ -113,4 +113,9 @@ public class Cliente {
     
    
     }
+          public void asociarClaseA(Object requestEntity)throws ClientErrorException{
+          webTarget.path("Alumno/AsociarClase").request(javax.ws.rs.core.MediaType.APPLICATION_XML).post(javax.ws.rs.client.Entity.entity(requestEntity, javax.ws.rs.core.MediaType.APPLICATION_XML));
+    
+   
+    }
 }
