@@ -2,3 +2,8 @@
 /Desarrollador/app/teacherCloudClienteWeb/build/
 /Desarrollador/app/teacherCloudClienteWeb/dist/
 /Desarrollador/app/ejemplos/Practica3RestClienteWeb/dist/
+Desarrollador/app/teacherCloudClienteWeb/nbproject/ant-deploy.xml
+Desarrollador/app/teacherCloudServ/build/web/WEB-INF/classes/Funcionalidad/BBDD.class
+Desarrollador/app/teacherCloudServ/build/web/WEB-INF/classes/servlet/GenericResource.class
+Desarrollador/app/teacherCloudServ/nbproject/ant-deploy.xml
+Desarrollador/app/teacherCloudServ/nbproject/private/private.properties
