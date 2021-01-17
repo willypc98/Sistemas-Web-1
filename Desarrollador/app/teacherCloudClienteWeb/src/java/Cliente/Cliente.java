@@ -74,7 +74,11 @@ public class Cliente {
     //Profesor
     public void mostrarCalificaciones()throws ClientErrorException{
         WebTarget resource = webTarget;   
+        
+        //resource = resource.queryParam("nombreClase", nombreClase);
+        
         resource = resource.path("Profesor/BuscarCalificaciones");
+        
     //POST    //webTarget.path("Profesor/BuscarCalificaciones").request(javax.ws.rs.core.MediaType.APPLICATION_XML).post(javax.ws.rs.client.Entity.entity(requestEntity, javax.ws.rs.core.MediaType.APPLICATION_XML));
     //GET    //return resource.request(javax.ws.rs.core.MediaType.APPLICATION_XML).get(Clase.class);
     }
@@ -82,7 +86,7 @@ public class Cliente {
     public void ofertarClase()throws ClientErrorException{
         WebTarget resource = webTarget;   
         resource = resource.path("Profesor/CrearClase");
-        //webTarget.path("Profesor/CrearClase").request(javax.ws.rs.core.MediaType.APPLICATION_XML).post(javax.ws.rs.client.Entity.entity(requestEntity, javax.ws.rs.core.MediaType.APPLICATION_XML));
+    //POST    //webTarget.path("Profesor/CrearClase").request(javax.ws.rs.core.MediaType.APPLICATION_XML).post(javax.ws.rs.client.Entity.entity(requestEntity, javax.ws.rs.core.MediaType.APPLICATION_XML));
         
     }
     
