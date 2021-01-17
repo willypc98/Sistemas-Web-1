@@ -158,6 +158,16 @@ Modelo modelo= new Modelo();
         
 
     }
+       
+    @POST
+    @Path("MostrarPeticion")
+    public Peticion mostrarPeticion(@FormParam("peticion_estado") String peticion_estado) throws SQLException, ClassNotFoundException, NamingException, NoSuchAlgorithmException {
+        Peticion peticion = new Peticion();
+        peticion = modelo.mostrarPeticion(peticion_estado);
+
+        return peticion;
+    }
+    
     /**
      * PUT method for updating or creating an instance of GenericResource
      *

@@ -78,9 +78,9 @@ public class Modelo {
 //         bbdd.crearClase(clase);
 //    }
      
-     public void mostrarPeticion(){
-        bbdd.mostrarPeticion();
-    }
+     public Peticion mostrarPeticion(String peticionEstado) throws SQLException, ClassNotFoundException, NamingException, NoSuchAlgorithmException {
+         return bbdd.mostrarPeticion(peticionEstado);
+    } 
        public void cancelarPeticion(){
         bbdd.cancelarPeticion();
     }
