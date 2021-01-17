@@ -4,9 +4,13 @@
 
 
 body {
-    background-color: hsl(190, 27%, 96%);
+    background-color: cadetblue;;
 }
 
+h3 {
+    text-align: center;
+    color: white;
+}
 .menu{
     margin: 100px auto;
     width: 350px;
