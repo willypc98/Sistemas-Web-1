@@ -1,0 +1,47 @@
+*{
+    font-family: sans-serif;
+}
+
+
+body {
+    background-color:white;
+}
+
+.menu{
+    margin: 100px auto;
+    width: 800px;
+    background-color: cadetblue;
+    padding: 10px;
+}
+
+.ofertar {
+    width: 15%;
+    height: 15%;
+    float: left;
+}
+.menu2{
+    display: flex;
+}
+.lista {
+    width: 15%;
+    height: 15%;
+    float: center;
+    flex-grow: 4;
+}
+
+.calificar {
+    width: 15%;
+    height: 15%;
+    float: right;
+    flex-grow: 4;
+    
+}
+
+#boton {
+    width: 100%;
+    border: none;
+    font-size: 18px;
+    background-color: cadetblue;
+    color: white;
+    text-align: center;
+}

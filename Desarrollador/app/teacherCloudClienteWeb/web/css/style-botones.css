@@ -4,7 +4,7 @@
 
 
 body {
-    background-color: cadetblue;;
+    background-color: cadetblue;
 }
 
 h3 {
@@ -39,6 +39,8 @@ h3 {
     margin-right: 1.5rem;
 }
 
+
+
 .buscador {
     width: 20%;
     height: 20%;
@@ -50,7 +52,7 @@ h3 {
     text-align: center;
     background-color: cadetblue;
     color: white;
-    margin-bottom: 8px;
+
     float: left;
     margin-right: 1.5rem;
 }
