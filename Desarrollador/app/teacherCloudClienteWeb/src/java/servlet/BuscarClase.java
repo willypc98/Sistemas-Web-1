@@ -42,16 +42,13 @@ public class BuscarClase extends HttpServlet {
       
     clase= modelo.buscarClase(nombreClase);
    //emailAlumno="hio";
-      request.setAttribute("identificadorClase", clase.getIdentificador());
-       request.setAttribute("emailAlumno", emailAlumno);
-       getServletContext().getRequestDispatcher("/Inscribirse").forward(request,response);
+   
      
-//            ServletContext contexto = request.getServletContext();
-//            contexto.setInitParameter("id", id.toString());
+
             respuesta = "Recibida, gracias por la respuesta";
 
-        
-       
+    getServletContext().setAttribute("emailAlumno", emailAlumno);
+      getServletContext().setAttribute("identificadorClase",  clase.getIdentificador()); 
   
             response.setContentType("text/html;charset=UTF-8");
             try (PrintWriter out = response.getWriter()) {
@@ -68,8 +65,9 @@ public class BuscarClase extends HttpServlet {
                 out.println("<button>Inscribirse</button>");
                 out.println("</body>");
                 out.println("</html>");
+                
             }
-
+  
         
 
     }
