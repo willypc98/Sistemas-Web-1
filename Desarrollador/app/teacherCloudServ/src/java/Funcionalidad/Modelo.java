@@ -86,7 +86,7 @@ public class Modelo {
     }
     
        //extras pero necesarias
-         public ArrayList<String> nombreClasePublicada(){
+         public ArrayList<Clase> nombreClasePublicada(){
         return bbdd.nombreClasePublicada();
     }
     

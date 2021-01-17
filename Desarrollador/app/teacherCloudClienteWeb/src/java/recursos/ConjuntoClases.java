@@ -19,13 +19,15 @@ import javax.xml.bind.annotation.XmlRootElement;
 @XmlRootElement(name = "ConjuntoClases")
 public class ConjuntoClases {
     @XmlElement()
-     private ArrayList <Clase> arrayRecetarios= new ArrayList();
+     private ArrayList <Clase> arrayClases= new ArrayList();
 
-    public ArrayList <Clase> getArrayRecetarios() {
-        return arrayRecetarios;
+    public ArrayList <Clase> getArrayClases() {
+        return arrayClases;
     }
 
-    public void setArrayRecetarios(ArrayList <Clase> arrayRecetarios) {
-        this.arrayRecetarios = arrayRecetarios;
+    public void setArrayClases(ArrayList <Clase> arrayClases) {
+        this.arrayClases = arrayClases;
     }
+
+
 }

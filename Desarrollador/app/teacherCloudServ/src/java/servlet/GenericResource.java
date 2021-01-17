@@ -7,6 +7,7 @@ package servlet;
 
 import Funcionalidad.Modelo;
 import Recursos.Clase;
+import Recursos.ConjuntoClases;
 import Recursos.IncidenciaC;
 import Recursos.Usuario;
 import Recursos.Peticion;
@@ -119,11 +120,11 @@ Modelo modelo= new Modelo();
     @GET
     @Path("Alumno/BuscarClasePublicada")
     @Produces(MediaType.TEXT_PLAIN)
-    public String nombreClasePublicada() throws SQLException, ClassNotFoundException, NamingException, NoSuchAlgorithmException {
-        ArrayList<String> clase = new ArrayList();
-        clase = modelo.nombreClasePublicada();
+    public ConjuntoClases nombreClasePublicada() throws SQLException, ClassNotFoundException, NamingException, NoSuchAlgorithmException {
+        ConjuntoClases cjClases = new ConjuntoClases();
+        cjClases.setArrayClases(modelo.nombreClasePublicada());
 
-        return "la clase es " + clase.get(1);
+        return cjClases;
     }
     //Profesor
     

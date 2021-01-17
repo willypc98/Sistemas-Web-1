@@ -447,8 +447,8 @@ protected Peticion mostrarPeticion(String peticionEstado) {
     }
     
      
-     protected ArrayList<String> nombreClasePublicada() {
-      ArrayList<String> clase = new ArrayList();
+     protected ArrayList<Clase> nombreClasePublicada() {
+      ArrayList<Clase> claseArray = new ArrayList();
         try {
             if(conector()==true){
                 String queryBBDD = "select clase_nombre from TCclase;";
@@ -460,9 +460,13 @@ protected Peticion mostrarPeticion(String peticionEstado) {
                 }
                 
                 try {
-                    while (rS.next()) {                     
-                        clase.add(rS.getString("clase_nombre"));
+                    while (rS.next()) { 
+                        Clase clase = new Clase();
+                        clase.setNombre(rS.getString("clase_nombre"));
+                         clase.setDescripcion(rS.getString("clase_descripcion"));
+                          clase.setCalificacion(Integer.parseInt(rS.getString("clase_calificacion")));
                         
+                        claseArray.add(clase);
 
                     }
                 } catch (SQLException ex) {
@@ -477,14 +481,14 @@ protected Peticion mostrarPeticion(String peticionEstado) {
             
             }
             else{
-                return clase;
+                return claseArray;
             }
         } catch (SQLException ex) {
             Logger.getLogger(BBDD.class.getName()).log(Level.SEVERE, null, ex);
         } catch (ClassNotFoundException ex) {
             Logger.getLogger(BBDD.class.getName()).log(Level.SEVERE, null, ex);
         }
-        return clase;
+        return claseArray;
     }
 
     protected String existeUsuario(String nombre) {

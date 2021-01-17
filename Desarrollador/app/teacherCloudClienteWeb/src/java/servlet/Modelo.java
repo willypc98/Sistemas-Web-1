@@ -25,6 +25,7 @@ import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import recursos.Clase;
+import recursos.ConjuntoClases;
 import recursos.IncidenciaC;
 
 
@@ -42,6 +43,7 @@ private String ruta = carpeta.getPath();
     //login
      public String validarUsuario(Usuario usuario){
      return cli.validarUsuario(usuario.getEmail(), usuario.getPassword());
+     
      }
      
       public String registrar(Usuario user){
@@ -57,5 +59,7 @@ private String ruta = carpeta.getPath();
      public Clase buscarClase(String nombreClase){
      return cli.buscarClase(nombreClase);
      }
-
+       public ConjuntoClases buscarClasesPublicada() {
+      return cli.buscarClasesPublicada();
+    }
 }

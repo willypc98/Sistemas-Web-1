@@ -11,6 +11,7 @@ import javax.ws.rs.client.Invocation;
 import javax.ws.rs.client.WebTarget;
 import javax.ws.rs.core.Response;
 import recursos.Clase;
+import recursos.ConjuntoClases;
 import recursos.Usuario;
 
 /**
@@ -56,7 +57,13 @@ public class Cliente {
         resource = resource.path("Alumno/BuscarClase");
          return resource.request(javax.ws.rs.core.MediaType.APPLICATION_XML).get(Clase.class);
     }
-
+    
+        public ConjuntoClases buscarClasesPublicada() throws ClientErrorException {
+        WebTarget resource = webTarget;   
+        resource = resource.path("Alumno/BuscarClasePublicada");
+         return resource.request(javax.ws.rs.core.MediaType.APPLICATION_XML).get(ConjuntoClases.class);
+    }
+        
     public void incidencia(Object requestEntity) {
         webTarget.path("Alumno/Incidencia").request(javax.ws.rs.core.MediaType.APPLICATION_XML).post(javax.ws.rs.client.Entity.entity(requestEntity, javax.ws.rs.core.MediaType.APPLICATION_XML));
     }
