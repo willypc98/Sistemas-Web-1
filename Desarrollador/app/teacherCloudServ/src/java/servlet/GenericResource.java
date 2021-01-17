@@ -119,7 +119,7 @@ Modelo modelo= new Modelo();
 
     @GET
     @Path("Alumno/BuscarClasePublicada")
-    @Produces(MediaType.TEXT_PLAIN)
+     @Produces("application/xml")
     public ConjuntoClases nombreClasePublicada() throws SQLException, ClassNotFoundException, NamingException, NoSuchAlgorithmException {
         ConjuntoClases cjClases = new ConjuntoClases();
         cjClases.setArrayClases(modelo.nombreClasePublicada());

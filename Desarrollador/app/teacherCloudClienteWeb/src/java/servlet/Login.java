@@ -11,6 +11,8 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import recursos.Clase;
+import recursos.ConjuntoClases;
 import recursos.Usuario;
 
 /**
@@ -43,7 +45,8 @@ public class Login extends HttpServlet {
         user.setPassword(password);
         valor = modelo.validarUsuario(user);
         System.out.println(valor);
-
+        ConjuntoClases cj = new ConjuntoClases();
+        cj= modelo.buscarClasesPublicada();
         if (valor.equals("error")) {
             respuesta = "Usuario invalido";
 
@@ -65,6 +68,14 @@ public class Login extends HttpServlet {
                 out.println("<div class='botones'>");
                 out.println("<button>Buscar Clase</button>");
                 out.println("<button> Reportar</button>");
+                for(Clase clase : cj.getArrayClases()){
+                
+                
+                     out.println("<h3>"+clase.getNombre()+"</h3>");
+                    
+                    
+                }
+                        
                 out.println("</div>");
                 out.println("</body>");
                 out.println("</html>");

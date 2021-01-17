@@ -451,7 +451,7 @@ protected Peticion mostrarPeticion(String peticionEstado) {
       ArrayList<Clase> claseArray = new ArrayList();
         try {
             if(conector()==true){
-                String queryBBDD = "select clase_nombre from TCclase;";
+                String queryBBDD = "select * from TCclase;";
               
                 try {
                     rS = createStatement.executeQuery(queryBBDD);
