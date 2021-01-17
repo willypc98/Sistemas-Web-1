@@ -147,11 +147,11 @@ Modelo modelo= new Modelo();
     }
         @PUT
     @Path("AceptarPeticion")
-    public void AceptarPeticion(@FormParam("peticion_estado") String peticion_estado,@FormParam("usuario_nombre") String usuario_nombre,@FormParam("clase_identificador") String clase_identificador) throws SQLException, ClassNotFoundException, NamingException, NoSuchAlgorithmException {
+    public void AceptarPeticion(@FormParam("peticion_estado") String peticion_estado,@FormParam("usuario_email") String usuario_email,@FormParam("clase_identificador") String clase_identificador) throws SQLException, ClassNotFoundException, NamingException, NoSuchAlgorithmException {
         Peticion peticion = new Peticion();
         
         peticion.setEstado(peticion_estado);
-        peticion.setUsuarioEmail(usuario_nombre);
+        peticion.setUsuarioEmail(usuario_email);
         peticion.setClaseIdentificador(clase_identificador);
         
         modelo.aceptarPeticion(peticion);
