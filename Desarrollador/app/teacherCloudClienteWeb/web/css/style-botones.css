@@ -1,0 +1,32 @@
+*{
+    font-family: sans-serif;
+}
+
+
+body {
+    background-color: cadetblue;
+}
+
+.botones{
+    margin: 100px auto;
+    width: 500px;
+    background-color: aliceblue;
+    padding: 60px;
+}
+
+button {
+    width: 45%;
+    height: 45%;
+    margin-top: -1rem;
+    padding-left: 2%;
+    padding-bottom: 2%;
+    border: none;
+    font-size: 18px;
+    text-align: center;
+    background-color: cadetblue;
+    color: white;
+    margin-bottom: 5px;
+    float: left;
+    margin-right: 1.5rem;
+
+}
