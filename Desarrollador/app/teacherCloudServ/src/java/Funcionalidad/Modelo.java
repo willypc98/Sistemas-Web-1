@@ -71,9 +71,9 @@ public class Modelo {
     public Clase mostrarCalificaciones(String claseCalificacion)throws SQLException, ClassNotFoundException, NamingException, NoSuchAlgorithmException{
        return bbdd.mostrarCalificaciones(claseCalificacion);
     }
-//     public void aceptarPeticion(Peticion peticion) throws SQLException, ClassNotFoundException, NamingException, NoSuchAlgorithmException{
-//        bbdd.aceptarPeticion(peticion);
-//    }
+     public void aceptarPeticion(Peticion peticion) throws SQLException, ClassNotFoundException, NamingException, NoSuchAlgorithmException{
+        bbdd.aceptarPeticion(peticion);
+    }
 //    public void aceptarPeticion(Peticion peticion) throws SQLException, ClassNotFoundException, NamingException, NoSuchAlgorithmException {
 //         bbdd.crearClase(clase);
 //    }

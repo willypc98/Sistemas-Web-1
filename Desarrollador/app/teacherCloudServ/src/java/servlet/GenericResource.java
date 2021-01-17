@@ -8,6 +8,7 @@ package servlet;
 import Funcionalidad.Modelo;
 import Recursos.Clase;
 import Recursos.Usuario;
+import Recursos.Peticion;
 import java.security.NoSuchAlgorithmException;
 import java.sql.SQLException;
 import java.util.ArrayList;
@@ -141,6 +142,19 @@ Modelo modelo= new Modelo();
         clase = modelo.mostrarCalificaciones(claseCalificacion);
 
         return clase;
+    }
+        @PUT
+    @Path("AceptarPeticion")
+    public void AceptarPeticion(@FormParam("peticion_estado") String peticion_estado,@FormParam("usuario_nombre") String usuario_nombre,@FormParam("clase_identificador") String clase_identificador) throws SQLException, ClassNotFoundException, NamingException, NoSuchAlgorithmException {
+        Peticion peticion = new Peticion();
+        
+        peticion.setEstado(peticion_estado);
+        peticion.setUsuarioEmail(usuario_nombre);
+        peticion.setClaseIdentificador(clase_identificador);
+        
+        modelo.aceptarPeticion(peticion);
+        
+
     }
     /**
      * PUT method for updating or creating an instance of GenericResource
