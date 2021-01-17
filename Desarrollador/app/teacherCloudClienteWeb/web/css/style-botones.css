@@ -7,9 +7,14 @@ body {
     background-color: cadetblue;;
 }
 
-h3 {
+h3{
     text-align: center;
     color: white;
+}
+h1{
+    text-align: center;
+    color: white;
+    padding-top:-1rem;
 }
 .menu{
     margin: 100px auto;

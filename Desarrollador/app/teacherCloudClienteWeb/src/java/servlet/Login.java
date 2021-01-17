@@ -68,9 +68,9 @@ public class Login extends HttpServlet {
                 out.println("<div class='menu'>");
                 out.println("<div class='menu2'>");
                 out.println("<div class='buscador'>");
-                out.println("<form method='post' action='/teacherCloudClienteWeb/Alumno/BuscarClase' name='Incidencia'>");
-                out.println("<input id='barra' type='search' name='busquedacodigo' >");
-                out.println("<input id='boton' type='submit' value='Buscar'>");
+                out.println("<form method='post' action='/teacherCloudClienteWeb/BuscarClase' name='Incidencia'>");
+                out.println("<input id='barra' type='search' name='nombreClase' placeholder='introducir la clase y dar enter' >");
+                //out.println("<input id='boton' type='submit' value='Buscar'>");
                 out.println("</form>");
                 out.println("</div>");
                 out.println("<div class='reportar'>");
@@ -80,6 +80,7 @@ public class Login extends HttpServlet {
                 out.println("</div>");
                 out.println("</div>");
                 out.println("</div>");
+                out.println("<h1>Clases disponibles</h1>");
                 for(Clase clase : cj.getArrayClases()){
                 
                 
