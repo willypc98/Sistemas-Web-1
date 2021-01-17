@@ -62,4 +62,16 @@ private String ruta = carpeta.getPath();
        public ConjuntoClases buscarClasesPublicada() {
       return cli.buscarClasesPublicada();
     }
+       
+       
+   //PROFESOR
+       
+    public void mostrarCalificaciones(){
+        
+    }
+    public void ofertarClase(){
+        
+    }
+       
+       
 }

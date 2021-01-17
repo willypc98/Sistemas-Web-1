@@ -69,4 +69,15 @@ public class Cliente {
     }
 
     
+    
+    
+    //Profesor
+    public void mostrarCalificaciones()throws ClientErrorException{
+        
+    }
+    
+    public void ofertarClase()throws ClientErrorException{
+        
+    }
+    
 }
