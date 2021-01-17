@@ -46,6 +46,7 @@ public class Inscribirse extends HttpServlet {
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
+            out.println("<link rel='stylesheet' href='css/style-botones.css'>");
             out.println("<title>Servlet Inscribirse</title>");            
             out.println("</head>");
             out.println("<body>");

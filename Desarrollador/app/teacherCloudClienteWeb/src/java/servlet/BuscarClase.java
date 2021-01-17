@@ -56,13 +56,14 @@ public class BuscarClase extends HttpServlet {
                 out.println("<!DOCTYPE html>");
                 out.println("<html>");
                 out.println("<head>");
+                out.println("<link rel='stylesheet' href='css/style-botones.css'>");
                 out.println("<title>Servlet Login</title>");
                 out.println("</form>");
                 out.println("</head>");
                 out.println("<body>");
                 out.println("<h1>" + clase.getNombre()+ "</h1>");
                 out.println("<form method='post' action='/teacherCloudClienteWeb/Inscribirse' name='Inscribirse'>");
-                out.println("<button>Inscribirse</button>");
+                out.println("<button id='boton'>Inscribirse</button>");
                 out.println("</body>");
                 out.println("</html>");
                 
