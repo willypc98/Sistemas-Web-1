@@ -44,6 +44,7 @@ public class OfertarClase extends HttpServlet {
        clase.setDescripcion(descripcion);
        clase.setCalificacion(Integer.parseInt(calificacion));
        modelo.ofertarClase(clase);
+       int idClase=modelo.buscarClase(nombre).getIdentificador();
      
 //            ServletContext contexto = request.getServletContext();
 //            contexto.setInitParameter("id", id.toString());

@@ -186,7 +186,7 @@ private static Connection con;
                         clase.setNombre(rS.getString("clase_nombre"));
                         clase.setDescripcion(rS.getString("clase_descripcion"));
                         clase.setCalificacion(Integer.parseInt(rS.getString("clase_calificacion")));
-                     
+                        clase.setIdentificador(Integer.parseInt(rS.getString("clase_identificador")));
 
                     }
                 } catch (SQLException ex) {
