@@ -66,12 +66,10 @@ private String ruta = carpeta.getPath();
        
    //PROFESOR
        
-//    public Clase mostrarCalificaciones(String nombreClase){
-//        return cli.mostrarCalificaciones(nombreClase);
-//    }
-//        public void mostrarCalificaciones(){
-//        cli.mostrarCalificaciones();
-//    }
+    public Clase mostrarCalificaciones(String nombreClase){
+        return cli.mostrarCalificaciones(nombreClase);
+    }
+
        public String mostrarModo(String usuarioEmail ){
         return cli.mostrarModo(usuarioEmail).getModo();
         

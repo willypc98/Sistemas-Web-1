@@ -84,6 +84,18 @@ public class Cliente {
         
    
     }
+        public Clase mostrarCalificaciones(String nombreClase)throws ClientErrorException{
+        WebTarget resource = webTarget;   
+         resource = resource.queryParam("claseCalificacion", nombreClase);
+            
+        resource = resource.path("Profesor/BuscarCalificaciones");
+         return resource.request(javax.ws.rs.core.MediaType.APPLICATION_XML).get(Clase.class);
+       
+        
+        
+        
+   
+    }
     
     public void ofertarClase(Object requestEntity)throws ClientErrorException{
           webTarget.path("Profesor/CrearClase").request(javax.ws.rs.core.MediaType.APPLICATION_XML).post(javax.ws.rs.client.Entity.entity(requestEntity, javax.ws.rs.core.MediaType.APPLICATION_XML));

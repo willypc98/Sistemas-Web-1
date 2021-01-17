@@ -11,6 +11,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import recursos.Clase;
 
 /**
  *
@@ -29,19 +30,42 @@ public class MostrarCalificaciones extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+           Clase clase = new Clase();
         response.setContentType("text/html;charset=UTF-8");
-        try (PrintWriter out = response.getWriter()) {
-            /* TODO output your page here. You may use following sample code. */
-            out.println("<!DOCTYPE html>");
-            out.println("<html>");
-            out.println("<head>");
-            out.println("<title>Servlet MostrarCalificaciones</title>");            
-            out.println("</head>");
-            out.println("<body>");
-            out.println("<h1>Servlet MostrarCalificaciones at " + request.getContextPath() + "</h1>");
-            out.println("</body>");
-            out.println("</html>");
-        }
+          String nombreClase = request.getParameter("nombreClase");
+        String respuesta = "";
+        String valor= "alloo";//te dice si falla o no
+
+       Modelo modelo = new Modelo();
+      
+    clase= modelo.mostrarCalificaciones(nombreClase);
+      
+
+     
+//            ServletContext contexto = request.getServletContext();
+//            contexto.setInitParameter("id", id.toString());
+           
+
+        
+       
+  
+            response.setContentType("text/html;charset=UTF-8");
+            try (PrintWriter out = response.getWriter()) {
+                /* TODO output your page here. You may use following sample code. */
+                out.println("<!DOCTYPE html>");
+                out.println("<html>");
+                out.println("<head>");
+                out.println("<title>Servlet Login</title>");
+                out.println("</head>");
+                out.println("<body>");
+                out.println("<h1>" + nombreClase+ "</h1>");
+                out.println("<h1>" + clase.getCalificacion()+ "</h1>");
+                out.println("</body>");
+                out.println("</html>");
+            }
+
+        
+
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
