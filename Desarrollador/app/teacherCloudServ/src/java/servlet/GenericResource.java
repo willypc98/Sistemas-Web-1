@@ -7,6 +7,7 @@ package servlet;
 
 import Funcionalidad.Modelo;
 import Recursos.Clase;
+import Recursos.IncidenciaC;
 import Recursos.Usuario;
 import Recursos.Peticion;
 import java.security.NoSuchAlgorithmException;
@@ -87,14 +88,15 @@ Modelo modelo= new Modelo();
         clase = modelo.buscarClase(nombreClase);
 
         return clase;
+        
     }
 
    
-    @PUT
+    @POST
     @Path("Alumno/Incidencia")
-    public void incidencia(@FormParam("incidencia") String incidencia) throws SQLException, ClassNotFoundException, NamingException, NoSuchAlgorithmException {
+    public void incidencia(IncidenciaC incidencia) throws SQLException, ClassNotFoundException, NamingException, NoSuchAlgorithmException {
 
-        modelo.reportar(incidencia);
+        modelo.reportar(incidencia.getIncidencia());
 
     }
 

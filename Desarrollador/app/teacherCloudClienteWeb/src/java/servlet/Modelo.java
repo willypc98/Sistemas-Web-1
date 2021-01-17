@@ -24,6 +24,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import recursos.IncidenciaC;
 
 
 /**
@@ -36,7 +37,7 @@ public class Modelo {
 private File carpeta = new File(sCarpAct);
 private String ruta = carpeta.getPath();
     
-
+ //USUARIO
     //login
      public String validarUsuario(Usuario usuario){
      return cli.validarUsuario(usuario.getEmail(), usuario.getPassword());
@@ -45,6 +46,12 @@ private String ruta = carpeta.getPath();
       public String registrar(Usuario user){
         System.out.println(cli.registrar(user).getEntity());
       return "si";
+    }
+
+      
+ //ALUMNO
+   public void enviarIncidencia(IncidenciaC incidencia) {
+       cli.incidencia(incidencia);
     }
 
 

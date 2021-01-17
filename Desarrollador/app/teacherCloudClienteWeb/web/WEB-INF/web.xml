@@ -8,6 +8,10 @@
         <servlet-name>Registrar</servlet-name>
         <servlet-class>servlet.Registrar</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>Incidencia</servlet-name>
+        <servlet-class>servlet.Incidencia</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>Login</servlet-name>
         <url-pattern>/Login</url-pattern>
@@ -15,6 +19,10 @@
     <servlet-mapping>
         <servlet-name>Registrar</servlet-name>
         <url-pattern>/Registrar</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Incidencia</servlet-name>
+        <url-pattern>/Incidencia</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

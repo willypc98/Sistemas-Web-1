@@ -50,5 +50,9 @@ public class Cliente {
         
         }
 
+    public void incidencia(Object requestEntity) {
+        webTarget.path("Alumno/Incidencia").request(javax.ws.rs.core.MediaType.APPLICATION_XML).post(javax.ws.rs.client.Entity.entity(requestEntity, javax.ws.rs.core.MediaType.APPLICATION_XML));
+    }
+
     
 }
