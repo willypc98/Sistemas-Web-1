@@ -289,10 +289,51 @@ private static Connection con;
     }
     
 
-    void mostrarPeticion() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+protected Peticion mostrarPeticion(String peticionEstado) {
+        Peticion peticion = new Peticion();
+      System.err.println("hola");
+        try {
+            
+            if(conector()==true){
+                String queryBBDD = "select * from TCpeticion where where peticion_estado like '"+peticionEstado+"';";
+              System.err.println("hola2");
+                try {
+                    rS = createStatement.executeQuery(queryBBDD);
+                } catch (SQLException ex) {
+                    Logger.getLogger(BBDD.class.getName()).log(Level.SEVERE, null, ex);
+                }
+                
+                try {
+                    while (rS.next()) {  
+                        peticion.setUsuarioEmail(rS.getString("usuario_email"));
+                        peticion.setClaseIdentificador(rS.getString("clase_identificador"));
+                         
+                        
+                    }
+                    System.err.println(peticion.getUsuarioEmail());
+                } catch (SQLException ex) {
+                    Logger.getLogger(BBDD.class.getName()).log(Level.SEVERE, null, ex);
+                }
+                try {
 
+                    con.close();
+                } catch (SQLException ex) {
+                    Logger.getLogger(BBDD.class.getName()).log(Level.SEVERE, null, ex);
+                }
+            
+            }
+           
+            else{
+                return peticion;
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(BBDD.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(BBDD.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return peticion;
+    }
+    
     void cancelarPeticion() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
