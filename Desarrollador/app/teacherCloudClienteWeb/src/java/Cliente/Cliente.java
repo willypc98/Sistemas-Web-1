@@ -83,11 +83,10 @@ public class Cliente {
     //GET    //return resource.request(javax.ws.rs.core.MediaType.APPLICATION_XML).get(Clase.class);
     }
     
-    public void ofertarClase()throws ClientErrorException{
-        WebTarget resource = webTarget;   
-        resource = resource.path("Profesor/CrearClase");
-    //POST    //webTarget.path("Profesor/CrearClase").request(javax.ws.rs.core.MediaType.APPLICATION_XML).post(javax.ws.rs.client.Entity.entity(requestEntity, javax.ws.rs.core.MediaType.APPLICATION_XML));
-        
+    public void ofertarClase(Object requestEntity)throws ClientErrorException{
+          webTarget.path("Profesor/CrearClase").request(javax.ws.rs.core.MediaType.APPLICATION_XML).post(javax.ws.rs.client.Entity.entity(requestEntity, javax.ws.rs.core.MediaType.APPLICATION_XML));
+    
+   
     }
     
 }
