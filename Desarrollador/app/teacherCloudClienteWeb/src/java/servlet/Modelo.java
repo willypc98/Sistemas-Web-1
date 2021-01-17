@@ -37,11 +37,15 @@ private File carpeta = new File(sCarpAct);
 private String ruta = carpeta.getPath();
     
 
-    //loguin
+    //login
      public String validarUsuario(Usuario usuario){
      return cli.validarUsuario(usuario.getEmail(), usuario.getPassword());
      }
      
+      public String registrar(Usuario user){
+        System.out.println(cli.registrar(user).getEntity());
+      return "si";
+    }
 
 
 }

@@ -5,22 +5,19 @@
  */
 package servlet;
 
-import recursos.Usuario;
-
-
 import java.io.IOException;
 import java.io.PrintWriter;
-import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import recursos.Usuario;
 
 /**
  *
  * @author david
  */
-public class Login1 extends HttpServlet {
+public class Registrar extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -33,30 +30,44 @@ public class Login1 extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-//     ServletContext context = null ;
-        String email = request.getParameter("email");
+               String email = request.getParameter("email");
+               String nombre = request.getParameter("nombre");
         String password = request.getParameter("password");
+        String password2 = request.getParameter("password2");
+        String modo = request.getParameter("modo");
         String respuesta = "";
-        String valor;//te dice si falla o no
+       
 
-       Modelo modelo = new Modelo();
+        Modelo modelo = new Modelo();
         Usuario user = new Usuario();
 
+        user.setNombre(nombre);
         user.setEmail(email);
         user.setPassword(password);
-        valor = modelo.validarUsuario(user);
-        System.out.println(valor);
-
-        if (valor.equals("error")) {
+        user.setModo(modo);
+        user.setMonedero(30);
+      
+        System.out.println(user.getEmail());
+        
+        if(password.equals(password2)==true){
+          
+          
+          if (modelo.registrar(user).equals("error")) {
             respuesta = "Usuario invalido";
-
-        } else {
+           } else {
 //            ServletContext contexto = request.getServletContext();
 //            contexto.setInitParameter("id", id.toString());
-            respuesta = "Bienvenido " + email;
+            respuesta = "Usuario registrado";
 
         }
-        if (respuesta.equals("Bienvenido " + email)) {
+        }else{
+        respuesta = "contraseñas distintas";
+        }
+
+        
+
+        
+        if (respuesta.equals("Usuario registrado")) {
             response.setContentType("text/html;charset=UTF-8");
             try (PrintWriter out = response.getWriter()) {
                 /* TODO output your page here. You may use following sample code. */
