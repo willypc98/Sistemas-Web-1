@@ -5,21 +5,12 @@
  */
 package recursos;
 
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlRootElement;
-
 /**
  *
  * @author david
  */
-@XmlAccessorType(XmlAccessType.FIELD)
-@XmlRootElement(name = "Clase")
 public class Clase {
-     @XmlElement()
     private String nombre;
-      @XmlElement()
     private String descripcion;
     
    private int calificacion;

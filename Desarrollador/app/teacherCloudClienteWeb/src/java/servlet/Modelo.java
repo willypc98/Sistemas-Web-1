@@ -24,7 +24,6 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import recursos.Clase;
 import recursos.IncidenciaC;
 
 
@@ -51,7 +50,7 @@ private String ruta = carpeta.getPath();
      
 <<<<<<< HEAD
       public String registrar(Usuario user){
-      cli.registrar(user);
+        System.out.println(cli.registrar(user).getEntity());
       return "si";
     }
 =======
@@ -62,8 +61,6 @@ private String ruta = carpeta.getPath();
    public void enviarIncidencia(IncidenciaC incidencia) {
        cli.incidencia(incidencia);
     }
-     public Clase buscarClase(String nombreClase){
-     return cli.buscarClase(nombreClase);
-     }
+
 
 }

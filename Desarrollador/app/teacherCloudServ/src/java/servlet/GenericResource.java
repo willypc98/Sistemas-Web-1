@@ -88,10 +88,9 @@ Modelo modelo= new Modelo();
     }
 
     //Alumno
-     @GET
+    @POST
     @Path("Alumno/BuscarClase")
-      @Produces("application/xml")
-    public Clase buscarClase(@QueryParam("nombreClase") String nombreClase) throws SQLException, ClassNotFoundException, NamingException, NoSuchAlgorithmException {
+    public Clase buscarClase(@FormParam("nombreClase") String nombreClase) throws SQLException, ClassNotFoundException, NamingException, NoSuchAlgorithmException {
         Clase clase = new Clase();
         clase = modelo.buscarClase(nombreClase);
 

@@ -11,7 +11,6 @@ import javax.ws.rs.client.Invocation;
 import javax.ws.rs.client.WebTarget;
 <<<<<<< HEAD
 import javax.ws.rs.core.Response;
-import recursos.Clase;
 import recursos.Usuario;
 =======
 >>>>>>> parent of ad24fb0... registrar funciona
@@ -52,14 +51,6 @@ public class Cliente {
         webTarget.path("Registrarse").request(javax.ws.rs.core.MediaType.APPLICATION_XML).post(javax.ws.rs.client.Entity.entity(requestEntity, javax.ws.rs.core.MediaType.APPLICATION_XML));
         
         }
-   
-       public Clase buscarClase( String nombreClase) throws ClientErrorException {
-        WebTarget resource = webTarget;
-        
-            resource = resource.queryParam("nombreClase", nombreClase);
-        resource = resource.path("Alumno/BuscarClase");
-         return resource.request(javax.ws.rs.core.MediaType.APPLICATION_XML).get(Clase.class);
-    }
 
     public void incidencia(Object requestEntity) {
         webTarget.path("Alumno/Incidencia").request(javax.ws.rs.core.MediaType.APPLICATION_XML).post(javax.ws.rs.client.Entity.entity(requestEntity, javax.ws.rs.core.MediaType.APPLICATION_XML));
