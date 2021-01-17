@@ -78,6 +78,9 @@ public class Registrar extends HttpServlet {
                 out.println("</head>");
                 out.println("<body>");
                 out.println("<h1>" + respuesta + "</h1>");
+                out.println(" <form action='http://localhost:8084/teacherCloudClienteWeb/login.html'>");
+                out.println("<input type='submit' value='volver' />");
+                out.println("</form>");
 //                out.println("<a href=\"validarXSD.html\">Valida los recetarios<br/></font></a>");
 //                out.println("<a href=\"menuReceta.html\">Menú Receta<br/></font></a>");
 //                out.println("<a href=\"menuRecetario.html\">Menú Recetario<br/></font></a>");
