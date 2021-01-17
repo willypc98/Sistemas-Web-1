@@ -1,0 +1,46 @@
+.menu{
+    margin: 100px auto;
+    width: 750px;
+    background-color: cadetblue;
+    padding: 60px;
+}
+
+.menu2{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+#buscador {
+    border: none;
+    flex-grow: 4;
+    border-radius: 30px;
+    position: center;
+    border: 1px solid rgba(0, 0, 0, 2);
+    padding: 15px;
+    margin: 10px 0;
+}
+
+button{
+    width: auto;
+    padding: 12px 10px;
+    border: none;
+    font-size: 18px;
+    background-color: cadetblue;
+    color: white;
+    margin-bottom: 5px;
+    flex-grow: 4;
+}
+
+#boton {
+    width: auto;
+    padding: 12px 10px;
+    border: none;
+    font-size: 18px;
+    background-color: cadetblue;
+    color: white;
+    margin-bottom: 5px;
+    position: right;
+    flex-grow: 4;
+}

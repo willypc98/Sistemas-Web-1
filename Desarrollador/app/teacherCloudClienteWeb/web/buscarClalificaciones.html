@@ -9,9 +9,28 @@ and open the template in the editor.
         <title>Acceso</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="css/style-buscarcla.css">
     </head>
     <body>
-        <form method="post" action="/teacherCloudClienteWeb/MostrarCalificaciones" name="Incidencia">
+
+        <div class='menu'> 
+            <div class='menu2'> 
+
+                <div class='buscador'>
+                <form action='/teacherCloudClienteWeb/MostrarCalificaciones' name='Incidencia'>
+                    <input id="buscador" name="nombreClase" type='text' placeholder="Buscar Clase">
+                    <button>Enviar</button>
+                </form>
+                </div>
+                <div class='volver'>
+                <form action='http://localhost:8084/teacherCloudClienteWeb/login.html'>
+                <input id='boton' type='submit' value='volver'>
+                </form>
+                </div>
+            </div>
+        </div>
+
+<!--         <form method="post" action="/teacherCloudClienteWeb/MostrarCalificaciones" name="Incidencia">
             <table border = "0">
 
                 
@@ -24,6 +43,6 @@ and open the template in the editor.
         </form>
       <form action="http://localhost:8084/teacherCloudClienteWeb/login.html">
         <input type="submit" value="volver" />
-</form>
+</form> -->
     </body>
 </html>
