@@ -16,6 +16,10 @@
         <servlet-name>BuscarClase</servlet-name>
         <servlet-class>servlet.BuscarClase</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>MostrarClases</servlet-name>
+        <servlet-class>servlet.MostrarClases</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>Login</servlet-name>
         <url-pattern>/Login</url-pattern>
@@ -31,6 +35,10 @@
     <servlet-mapping>
         <servlet-name>BuscarClase</servlet-name>
         <url-pattern>/BuscarClase</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>MostrarClases</servlet-name>
+        <url-pattern>/MostrarClases</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
