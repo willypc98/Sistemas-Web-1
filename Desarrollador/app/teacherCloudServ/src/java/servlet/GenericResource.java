@@ -7,9 +7,11 @@ package servlet;
 
 import Funcionalidad.Modelo;
 import Recursos.Clase;
+import Recursos.Usuario;
 import java.security.NoSuchAlgorithmException;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import javax.inject.Singleton;
 import javax.naming.NamingException;
 import javax.ws.rs.core.Context;
 import javax.ws.rs.core.UriInfo;
@@ -30,6 +32,7 @@ import javax.ws.rs.core.MediaType;
  *
  * @author david
  */
+@Singleton
 @Path("Usuario")
 public class GenericResource {
 Modelo modelo= new Modelo();
@@ -49,14 +52,15 @@ Modelo modelo= new Modelo();
 
 
     //hace falta ponerlo en post pero ya responde
-     @POST
+     @GET
      @Path("Login")
-      @Produces(MediaType.TEXT_PLAIN)
-    public String autenticar(@FormParam("usuarioEmail") String usuarioEmail,@FormParam("usuarioPass") String usuarioPass) throws SQLException, ClassNotFoundException, NamingException, NoSuchAlgorithmException {
+    @Produces("application/xml")
+    public String autenticar(@QueryParam("usuarioEmail") String usuarioEmail,@QueryParam("usuarioPass") String usuarioPass) throws SQLException, ClassNotFoundException, NamingException, NoSuchAlgorithmException {
         //cuando este en el cliente hay que quitarlo y solo dejar en boolean
+        //@QueryParam("usuarioEmail") String usuarioEmail,@QueryParam("usuarioPass") String usuarioPass
         String auxTextoRespuesta="error";
-      
-        if (modelo.autenticar(usuarioEmail, usuarioPass)==true){
+        
+        if (modelo.autenticar(usuarioEmail , usuarioPass)==true){
             auxTextoRespuesta="todo correcto";
         }
        return auxTextoRespuesta;

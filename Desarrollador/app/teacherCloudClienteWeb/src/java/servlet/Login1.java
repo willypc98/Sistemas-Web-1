@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Servlets;
+package servlet;
 
 import recursos.Usuario;
 
@@ -20,7 +20,7 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author david
  */
-public class Login extends HttpServlet {
+public class Login1 extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -33,30 +33,30 @@ public class Login extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-//        ServletContext context = null ;
-        String nombre = request.getParameter("nombre");
+//     ServletContext context = null ;
+        String email = request.getParameter("email");
         String password = request.getParameter("password");
         String respuesta = "";
-        Integer id;
+        String valor;//te dice si falla o no
 
-       // Modelo modelo = new Modelo();
+       Modelo modelo = new Modelo();
         Usuario user = new Usuario();
 
-        user.setNombre(nombre);
+        user.setEmail(email);
         user.setPassword(password);
-        //id = modelo.validarUsuario(user);
-        id =1;// revisar esto
+        valor = modelo.validarUsuario(user);
+        System.out.println(valor);
 
-        if (id < 0) {
+        if (valor.equals("error")) {
             respuesta = "Usuario invalido";
 
         } else {
-            ServletContext contexto = request.getServletContext();
-            contexto.setInitParameter("id", id.toString());
-            respuesta = "Bienvenido " + nombre;
+//            ServletContext contexto = request.getServletContext();
+//            contexto.setInitParameter("id", id.toString());
+            respuesta = "Bienvenido " + email;
 
         }
-        if (respuesta.equals("Bienvenido " + nombre)) {
+        if (respuesta.equals("Bienvenido " + email)) {
             response.setContentType("text/html;charset=UTF-8");
             try (PrintWriter out = response.getWriter()) {
                 /* TODO output your page here. You may use following sample code. */
@@ -67,11 +67,11 @@ public class Login extends HttpServlet {
                 out.println("</head>");
                 out.println("<body>");
                 out.println("<h1>" + respuesta + "</h1>");
-                out.println("<a href=\"validarXSD.html\">Valida los recetarios<br/></font></a>");
-                out.println("<a href=\"menuReceta.html\">Menú Receta<br/></font></a>");
-                out.println("<a href=\"menuRecetario.html\">Menú Recetario<br/></font></a>");
-                out.println("<h1> Recetarios disponibles</h1>");
-//
+//                out.println("<a href=\"validarXSD.html\">Valida los recetarios<br/></font></a>");
+//                out.println("<a href=\"menuReceta.html\">Menú Receta<br/></font></a>");
+//                out.println("<a href=\"menuRecetario.html\">Menú Recetario<br/></font></a>");
+//                out.println("<h1> Recetarios disponibles</h1>");
+////
 //                for (String name : modelo.obtenerRecetarios(id)) {
 //                    out.println("<h3>" + name + "</h3>");
 //
