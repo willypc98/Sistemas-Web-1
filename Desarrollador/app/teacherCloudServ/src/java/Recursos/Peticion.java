@@ -11,6 +11,9 @@ package Recursos;
  */
 public class Peticion {
     private String estado;
+    private String usuarioEmail;
+    private String claseIdentificador;
+    
 
     /**
      * @return the estado
@@ -24,6 +27,34 @@ public class Peticion {
      */
     public void setEstado(String estado) {
         this.estado = estado;
+    }
+
+    /**
+     * @return the usuarioEmail
+     */
+    public String getUsuarioEmail() {
+        return usuarioEmail;
+    }
+
+    /**
+     * @param usuarioEmail the usuarioEmail to set
+     */
+    public void setUsuarioEmail(String usuarioEmail) {
+        this.usuarioEmail = usuarioEmail;
+    }
+
+    /**
+     * @return the claseIdentificador
+     */
+    public String getClaseIdentificador() {
+        return claseIdentificador;
+    }
+
+    /**
+     * @param claseIdentificador the claseIdentificador to set
+     */
+    public void setClaseIdentificador(String claseIdentificador) {
+        this.claseIdentificador = claseIdentificador;
     }
     
 }

@@ -6,6 +6,7 @@
 package Funcionalidad;
 
 import Recursos.Clase;
+import Recursos.Peticion;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
@@ -276,9 +277,17 @@ private static Connection con;
         return clase;
     }
 
-    void aceptarPeticion() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    protected void aceptarPeticion(Peticion peticion) throws SQLException, ClassNotFoundException {
+       
+     if(conector()==true){
+                
+            createStatement.executeUpdate("INSERT INTO TCpeticion (peticion_estado,usuario_email,clase_identificaddor) VALUES ('" + peticion.getEstado()  + "','"+peticion.getUsuarioEmail()+"',"
+                                          +peticion.getUsuarioEmail()+");");
+           con.close();
+           }
+        
     }
+    
 
     void mostrarPeticion() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
