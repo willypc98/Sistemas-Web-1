@@ -8,6 +8,7 @@ package Funcionalidad;
 import Funcionalidad.BBDD;
 import Recursos.Clase;
 import Recursos.Peticion;
+import Recursos.Usuario;
 import java.security.NoSuchAlgorithmException;
 import java.sql.SQLException;
 import java.util.ArrayList;
@@ -89,5 +90,7 @@ public class Modelo {
          public ArrayList<Clase> nombreClasePublicada(){
         return bbdd.nombreClasePublicada();
     }
-    
+    public Usuario mostrarModo(String usuarioEmail) throws SQLException, ClassNotFoundException, NamingException, NoSuchAlgorithmException {
+         return bbdd.mostrarModo(usuarioEmail);
+ } 
 }

@@ -167,7 +167,15 @@ Modelo modelo= new Modelo();
 
         return peticion;
     }
-    
+    @GET
+    @Path("MostrarModo")
+    @Produces("application/xml")
+    public Usuario mostrarModo(@QueryParam("usuarioEmail") String usuarioEmail) throws SQLException, ClassNotFoundException, NamingException, NoSuchAlgorithmException {
+    Usuario usuario = new Usuario();
+    usuario = modelo.mostrarModo(usuarioEmail);
+
+      return usuario;
+    }
     /**
      * PUT method for updating or creating an instance of GenericResource
      *
