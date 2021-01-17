@@ -1,35 +1,38 @@
 <!DOCTYPE html>
-<!--
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
--->
 <html>
     <head>
-        <title>Acceso</title>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="css/style-registrar.css">
     </head>
     <body>
-        <form method="post" action="/teacherCloudClienteWeb/Registrar" name="Login">
-            <table border = "0">
-                <tr>
-                    <td><input name="email" type ="text"  placeholder="email"/></td>
-                </tr>
-                 <tr>
-                    <td><input name="nombre" type ="text"  placeholder="Nombre"/></td>
-                </tr>
-                <tr>
-                    <td><input name="password" type ="text"  placeholder="password"/></td>
-                </tr>
-                <tr>
-                    <td><input name="password2" type ="text"  placeholder="Repite password"/></td>
-                </tr>
-                <tr>
-                    <td><input name="modo" type ="text"  placeholder="alumno o profesor"/></td>
-                </tr>
-                </table>
-            <button>Enviar</button>
-        </form>
+         <form method="post" action="/teacherCloudClienteWeb/Registrar" name="Registrar">
+        <div class="login-div">
+            <div class="title">Registrarse en TeacherCloud</div>
+            <div class="form">
+                <div class="email">
+                    <input name="email" type="text"  placeholder="email">
+                </div>
+
+                <div class="nombre">
+                    <input  type="text" name="nombre" placeholder="nombre">
+                </div>
+
+                <div class="password">
+                    <input  type="text" name="password" placeholder="password">
+                </div>
+
+                <div class="password2">
+                    <input type="text" name="password2" placeholder="Repite password">
+                </div>
+
+                <div class="modo">
+                    <input  type="text" name="modo" placeholder="alumno o profesor">
+                </div>
+
+            </div>
+            <button class="enviar">Enviar</button>
+            </form>
+
+
+        </div>  
     </body>
 </html>

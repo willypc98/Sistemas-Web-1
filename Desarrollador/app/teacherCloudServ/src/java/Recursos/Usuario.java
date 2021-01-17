@@ -5,13 +5,28 @@
  */
 package Recursos;
 
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlRootElement;
+
 /**
  *
  * @author david
  */
+@XmlAccessorType(XmlAccessType.FIELD)
+@XmlRootElement(name = "Usuario")
 public class Usuario {
-    private String nombre, password, email, modo;
-
+      @XmlElement()
+    private String nombre;
+      @XmlElement()
+    private String password;
+      @XmlElement()
+    private String email;
+      @XmlElement()
+    private String modo;
+      @XmlElement()
+    private int monedero;
 
     public String getNombre() {
         return nombre;
@@ -43,6 +58,14 @@ public class Usuario {
 
     public void setModo(String modo) {
         this.modo = modo;
+    }
+
+    public int getMonedero() {
+        return monedero;
+    }
+
+    public void setMonedero(int monedero) {
+        this.monedero = monedero;
     }
     
     

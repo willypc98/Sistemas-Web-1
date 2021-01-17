@@ -69,28 +69,22 @@ Modelo modelo= new Modelo();
     }
 
 
-    @PUT
+    @POST
     @Path("Registrarse")
-<<<<<<< HEAD
     @Consumes("application/xml")
     public void registrase(Usuario user)throws SQLException, ClassNotFoundException, NamingException, NoSuchAlgorithmException {
        
         //(@FormParam("usuarioModo") String usuarioModo,@FormParam("usuarioEmail") String usuarioEmail,@FormParam("usuarioNombre") String usuarioNombre,@FormParam("usuarioPass") String usuarioPass,@FormParam("usuarioMonedero") String usuarioMonedero)
         //modelo.registrar(usuarioModo, usuarioEmail, usuarioNombre, usuarioPass,Integer.getInteger(usuarioMonedero));
          modelo.registrar(user.getModo(), user.getEmail(), user.getNombre(),user.getPassword(), user.getMonedero());
-=======
-    public void registrase(@FormParam("usuarioModo") String usuarioModo,@FormParam("usuarioEmail") String usuarioEmail,@FormParam("usuarioNombre") String usuarioNombre,@FormParam("usuarioPass") String usuarioPass,@FormParam("usuarioMonedero") String usuarioMonedero) throws SQLException, ClassNotFoundException, NamingException, NoSuchAlgorithmException {
-
-        modelo.registrar(usuarioModo, usuarioEmail, usuarioNombre, usuarioPass,Integer.getInteger(usuarioMonedero));
-
->>>>>>> parent of ad24fb0... registrar funciona
        
     }
 
     //Alumno
-    @POST
+     @GET
     @Path("Alumno/BuscarClase")
-    public Clase buscarClase(@FormParam("nombreClase") String nombreClase) throws SQLException, ClassNotFoundException, NamingException, NoSuchAlgorithmException {
+      @Produces("application/xml")
+    public Clase buscarClase(@QueryParam("nombreClase") String nombreClase) throws SQLException, ClassNotFoundException, NamingException, NoSuchAlgorithmException {
         Clase clase = new Clase();
         clase = modelo.buscarClase(nombreClase);
 
