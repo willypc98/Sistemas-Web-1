@@ -128,13 +128,11 @@ Modelo modelo= new Modelo();
     }
     //Profesor
     
-    @PUT
+    @POST
+    @Consumes("application/xml")
     @Path("Profesor/CrearClase")
-    public void crearClase(@FormParam("clase_nombre") String clase_nombre,@FormParam("clase_descripcion") String clase_descripcion,@FormParam("clase_calificacion") String clase_calificacion) throws SQLException, ClassNotFoundException, NamingException, NoSuchAlgorithmException {
-        Clase clase = new Clase();
-        clase.setNombre(clase_nombre);
-        clase.setDescripcion(clase_descripcion);
-        clase.setCalificacion(Integer.parseInt(clase_calificacion));
+    public void crearClase(Clase clase) throws SQLException, ClassNotFoundException, NamingException, NoSuchAlgorithmException {
+
         modelo.crearClase(clase);
         
 

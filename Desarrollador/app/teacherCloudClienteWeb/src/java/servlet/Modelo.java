@@ -73,8 +73,8 @@ private String ruta = carpeta.getPath();
         cli.mostrarCalificaciones();
     }
     
-    public void ofertarClase(){
-        cli.ofertarClase();
+    public void ofertarClase(Clase clase){
+        cli.ofertarClase(clase);
     }
        
        
