@@ -20,6 +20,14 @@
         <servlet-name>MostrarClases</servlet-name>
         <servlet-class>servlet.MostrarClases</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>OfertarClase</servlet-name>
+        <servlet-class>servlet.OfertarClase</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>MostrarCalificaciones</servlet-name>
+        <servlet-class>servlet.MostrarCalificaciones</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>Login</servlet-name>
         <url-pattern>/Login</url-pattern>
@@ -39,6 +47,14 @@
     <servlet-mapping>
         <servlet-name>MostrarClases</servlet-name>
         <url-pattern>/MostrarClases</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>OfertarClase</servlet-name>
+        <url-pattern>/OfertarClase</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>MostrarCalificaciones</servlet-name>
+        <url-pattern>/MostrarCalificaciones</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

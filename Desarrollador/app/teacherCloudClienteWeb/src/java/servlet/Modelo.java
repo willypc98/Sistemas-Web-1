@@ -67,10 +67,11 @@ private String ruta = carpeta.getPath();
    //PROFESOR
        
     public void mostrarCalificaciones(){
-        
+        cli.mostrarCalificaciones();
     }
+    
     public void ofertarClase(){
-        
+        cli.ofertarClase();
     }
        
        
