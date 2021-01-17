@@ -53,10 +53,11 @@ public class Login extends HttpServlet {
         } else {
 //            ServletContext contexto = request.getServletContext();
 //            contexto.setInitParameter("id", id.toString());
-            respuesta = "Bienvenido " + email;
+            respuesta = "Bienvenido" + email;
 
         }
-        if (respuesta.equals("Bienvenido " + email)) {
+        if(modelo.mostrarModo(email).equals("alumno")){
+        if (respuesta.equals("Bienvenido" + email)) {
             response.setContentType("text/html;charset=UTF-8");
             try (PrintWriter out = response.getWriter()) {
                 out.println("<!DOCTYPE html>");
@@ -68,9 +69,9 @@ public class Login extends HttpServlet {
                 out.println("<div class='menu'>");
                 out.println("<div class='menu2'>");
                 out.println("<div class='buscador'>");
-                out.println("<form method='post' action='/teacherCloudClienteWeb/Alumno/BuscarClase' name='Incidencia'>");
-                out.println("<input id='barra' type='search' name='busquedacodigo' >");
-                out.println("<input id='boton' type='submit' value='Buscar'>");
+                out.println("<form method='post' action='/teacherCloudClienteWeb/BuscarClase' name='Incidencia'>");
+                out.println("<input id='barra' type='search' name='nombreClase' placeholder='introducir la clase y dar enter' >");
+                //out.println("<input id='boton' type='submit' value='Buscar'>");
                 out.println("</form>");
                 out.println("</div>");
                 out.println("<div class='reportar'>");
@@ -80,6 +81,7 @@ public class Login extends HttpServlet {
                 out.println("</div>");
                 out.println("</div>");
                 out.println("</div>");
+                out.println("<h1>Clases disponibles</h1>");
                 for(Clase clase : cj.getArrayClases()){
                 
                 
@@ -109,8 +111,22 @@ public class Login extends HttpServlet {
 
         }
 
+      }else{
+         response.setContentType("text/html;charset=UTF-8");
+            try (PrintWriter out = response.getWriter()) {
+                /* TODO output your page here. You may use following sample code. */
+                out.println("<!DOCTYPE html>");
+                out.println("<html>");
+                out.println("<head>");
+                out.println("<title>Servlet Login</title>");
+                out.println("</head>");
+                out.println("<body>");
+                out.println("<h1>" + " hola profe" + "</h1>");
+                out.println("</body>");
+                out.println("</html>");
+            }
+        }
     }
-
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**
      * Handles the HTTP <code>GET</code> method.

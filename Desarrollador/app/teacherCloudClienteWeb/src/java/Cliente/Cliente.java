@@ -38,7 +38,7 @@ public class Cliente {
   public String validarUsuario( String usuarioNombre, String usuarioPass) throws ClientErrorException {
         WebTarget resource = webTarget;
         
-        String ho;
+  
             resource = resource.queryParam("usuarioEmail", usuarioNombre);
             resource = resource.queryParam("usuarioPass", usuarioPass);
         resource = resource.path("Login");
@@ -72,15 +72,17 @@ public class Cliente {
     
     
     //Profesor
-    public void mostrarCalificaciones()throws ClientErrorException{
+    public Usuario mostrarModo(String usuarioEmail)throws ClientErrorException{
         WebTarget resource = webTarget;   
+         resource = resource.queryParam("usuarioEmail", usuarioEmail);
+            
+        resource = resource.path("MostrarModo");
+         return resource.request(javax.ws.rs.core.MediaType.APPLICATION_XML).get(Usuario.class);
+       
         
-        //resource = resource.queryParam("nombreClase", nombreClase);
         
-        resource = resource.path("Profesor/BuscarCalificaciones");
         
-    //POST    //webTarget.path("Profesor/BuscarCalificaciones").request(javax.ws.rs.core.MediaType.APPLICATION_XML).post(javax.ws.rs.client.Entity.entity(requestEntity, javax.ws.rs.core.MediaType.APPLICATION_XML));
-    //GET    //return resource.request(javax.ws.rs.core.MediaType.APPLICATION_XML).get(Clase.class);
+   
     }
     
     public void ofertarClase(Object requestEntity)throws ClientErrorException{

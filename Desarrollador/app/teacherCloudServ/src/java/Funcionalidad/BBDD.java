@@ -7,6 +7,7 @@ package Funcionalidad;
 
 import Recursos.Clase;
 import Recursos.Peticion;
+import Recursos.Usuario;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
@@ -531,5 +532,43 @@ protected Peticion mostrarPeticion(String peticionEstado) {
             Logger.getLogger(BBDD.class.getName()).log(Level.SEVERE, null, ex);
         }
         return respuesta;
+    }
+    protected Usuario mostrarModo(String usuarioEmail) {
+        Usuario usuario= new Usuario();
+        try {
+            if(conector()==true){
+                String queryBBDD = "select * from TCusuario where usuario_email like '"+usuarioEmail+"';";
+
+                try {
+                    rS = createStatement.executeQuery(queryBBDD);
+                } catch (SQLException ex) {
+                    Logger.getLogger(BBDD.class.getName()).log(Level.SEVERE, null, ex);
+                }
+
+                try {
+                    while (rS.next()) {
+                     usuario.setModo(rS.getString("usuario_modo"));
+
+                    }
+                } catch (SQLException ex) {
+                    Logger.getLogger(BBDD.class.getName()).log(Level.SEVERE, null, ex);
+                }
+                try {
+
+                    con.close();
+                } catch (SQLException ex) {
+                    Logger.getLogger(BBDD.class.getName()).log(Level.SEVERE, null, ex);
+                }
+
+            }
+            else{
+                return usuario;
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(BBDD.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(BBDD.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return usuario;
     }
 }

@@ -69,9 +69,13 @@ private String ruta = carpeta.getPath();
 //    public Clase mostrarCalificaciones(String nombreClase){
 //        return cli.mostrarCalificaciones(nombreClase);
 //    }
-        public void mostrarCalificaciones(){
-        cli.mostrarCalificaciones();
-    }
+//        public void mostrarCalificaciones(){
+//        cli.mostrarCalificaciones();
+//    }
+       public String mostrarModo(String usuarioEmail ){
+        return cli.mostrarModo(usuarioEmail).getModo();
+        
+    } 
     
     public void ofertarClase(Clase clase){
         cli.ofertarClase(clase);
